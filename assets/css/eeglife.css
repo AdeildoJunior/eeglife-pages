@@ -325,6 +325,17 @@ ol {
   color: var(--dourado-suave);
 }
 
+/* Intro e nota sobre o grafite: o cinza-azulado de fundo claro fica em 1,9:1
+   sobre o grafite, bem abaixo do mínimo da WCAG. Mesmo tom já usado pelo
+   rodapé e pelas listas sobre fundo escuro. */
+.secao--grafite :is(.secao__intro, .secao__nota) {
+  color: var(--tinta-suave-sobre-escuro);
+}
+
+.secao--grafite .secao__nota {
+  border-left-color: var(--dourado-suave);
+}
+
 .secao--grafite a {
   color: var(--dourado-suave);
 }
@@ -1578,6 +1589,57 @@ ol {
   color: var(--tinta-suave);
   font-size: 0.9375em;
   margin: 0;
+}
+
+/* Fichas de modalidade: o mesmo cartão das manobras, com corpo mais longo —
+   resumo, lista de atributos rotulados e uma ressalva separada por filete.
+   Nenhum token novo: borda, raio, superfície e cores são os já existentes. */
+.fichas {
+  display: grid;
+  gap: clamp(1.1rem, 2vw, 1.6rem);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.ficha {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-grande);
+  background: var(--superficie);
+}
+
+.secao--claro .ficha {
+  background: var(--fundo);
+}
+
+.ficha__titulo {
+  margin-bottom: 0.45rem;
+}
+
+.ficha__alias {
+  color: var(--tinta-suave);
+  font-size: 0.8125em;
+  margin-bottom: 0.9rem;
+}
+
+.ficha__resumo {
+  color: var(--tinta-suave);
+  font-size: 0.9375em;
+  margin-bottom: 0;
+}
+
+/* O rótulo do atributo ("Duração:") usa a tinta cheia para se destacar do
+   corpo do item, que é tinta suave. */
+.ficha .pontos strong {
+  color: var(--tinta);
+}
+
+.ficha__nota {
+  margin-top: 1.2rem;
+  padding-top: 1.05rem;
+  border-top: 1px solid var(--linha);
+  color: var(--tinta-suave);
+  font-size: 0.875em;
+  margin-bottom: 0;
 }
 
 /* Modalidades */
