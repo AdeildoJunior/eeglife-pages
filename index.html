@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <!-- Marca que há JavaScript antes da primeira pintura: no celular o menu já
+       nasce recolhido, em vez de aparecer empilhado e colapsar depois. Sem
+       JavaScript a classe não entra e a navegação fica visível e utilizável. -->
+  <script>document.documentElement.className+=' tem-js';</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Eletroencefalograma no Rio de Janeiro | EEGLife Neurodiagnósticos</title>
+  <meta name="description" content="Eletroencefalograma (EEG) no Rio de Janeiro com laudo médico. Exame indolor e sem radiação. Veja como funciona, como se preparar e como agendar."/>
+  <link rel="canonical" href="https://eeglife.com.br/"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <!-- Pré-lançamento: ver LANCAMENTO.md para liberar a indexação. -->
+  <meta name="theme-color" content="#F8F5EE" media="(prefers-color-scheme: light)"/>
+  <meta name="theme-color" content="#1A232A" media="(prefers-color-scheme: dark)"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="EEGLife"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:title" content="Eletroencefalograma no Rio de Janeiro | EEGLife Neurodiagnósticos"/>
+  <meta property="og:description" content="Eletroencefalograma (EEG) no Rio de Janeiro com laudo médico. Exame indolor e sem radiação. Veja como funciona, como se preparar e como agendar."/>
+  <meta property="og:url" content="https://eeglife.com.br/"/>
+  <meta property="og:image" content="https://eeglife.com.br/assets/img/eeglife-og.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="EEGLife — Neurodiagnósticos"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png"/>
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png"/>
+  <link rel="manifest" href="/site.webmanifest"/>
+
+  <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="/assets/css/eeglife.css"/>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://eeglife.com.br/#eeglife",
+      "name": "EEGLife",
+      "alternateName": "EEGLife Neurodiagnósticos",
+      "legalName": "Sopro Life Diagnósticos e Soluções em Saúde LTDA",
+      "url": "https://eeglife.com.br/",
+      "description": "Eletroencefalograma e neurodiagnósticos no Rio de Janeiro.",
+      "medicalSpecialty": "Neurologic",
+      "areaServed": {
+        "@type": "City",
+        "name": "Rio de Janeiro"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Sopro Life Diagnósticos e Soluções em Saúde LTDA",
+        "url": "https://soprolife.com.br"
+      },
+      "availableService": [
+        {
+          "@type": "MedicalTest",
+          "name": "Eletroencefalograma (EEG)",
+          "description": "Registro da atividade elétrica do cérebro por meio de eletrodos posicionados no couro cabeludo.",
+          "url": "https://eeglife.com.br/eletroencefalograma/"
+        }
+      ],
+      "telephone": "+5521998901775",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://eeglife.com.br/#site",
+      "name": "EEGLife",
+      "url": "https://eeglife.com.br/",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://eeglife.com.br/#eeglife"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://eeglife.com.br/",
+      "url": "https://eeglife.com.br/",
+      "name": "Eletroencefalograma no Rio de Janeiro | EEGLife Neurodiagnósticos",
+      "description": "Eletroencefalograma (EEG) no Rio de Janeiro com laudo médico. Exame indolor e sem radiação. Veja como funciona, como se preparar e como agendar.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://eeglife.com.br/#site"
+      },
+      "about": {
+        "@id": "https://eeglife.com.br/#eeglife"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O eletroencefalograma dói ou dá choque?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O eletroencefalograma é indolor e não aplica nenhuma corrente elétrica no paciente. Os eletrodos funcionam como microfones muito sensíveis: eles apenas captam a atividade elétrica que o próprio cérebro já produz. A sensação é de ter pequenos discos apoiados no couro cabeludo com uma pasta fria. Não há agulhas, cortes nem radiação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo dura o exame?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O registro de um eletroencefalograma de rotina costuma levar de 20 a 40 minutos. Como ainda é preciso medir a cabeça, posicionar os eletrodos e retirá-los no fim, reserve um tempo maior do que a duração do registro em si. Protocolos específicos, como os que incluem registro durante o sono, levam mais tempo. A duração do seu exame segue o que foi solicitado no pedido médico."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso de pedido médico para fazer o EEG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O eletroencefalograma é um exame complementar e é realizado mediante indicação médica. O pedido traz o protocolo a ser seguido e o motivo clínico da investigação, informações que o médico usa depois para interpretar o traçado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso ficar em jejum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não é necessário jejum — e ficar muitas horas sem comer pode até alterar o traçado. Faça uma refeição leve antes do exame. O que se pede é evitar cafeína nas horas anteriores: café, chá preto, chá verde, refrigerantes à base de cola, energéticos e chocolate interferem no registro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso tomar meus medicamentos no dia do exame?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Continue tomando todos os seus medicamentos nos horários habituais, inclusive anticonvulsivantes, a menos que o médico que solicitou o exame tenha orientado o contrário por escrito. Não suspenda nenhuma medicação por conta própria: além do risco para a sua saúde, isso pode comprometer a leitura do exame. Leve a lista do que você usa, com doses e horários."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como devo lavar o cabelo antes do eletroencefalograma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lave o cabelo na véspera ou no dia do exame usando apenas xampu, enxágue bem e venha com o cabelo seco. Não use condicionador, creme de pentear, óleo, gel, pomada, spray nem laquê. Esses produtos deixam uma película no couro cabeludo que atrapalha o contato dos eletrodos e pode prejudicar a qualidade do traçado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Crianças podem fazer eletroencefalograma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O exame é frequente na faixa pediátrica e é igualmente indolor. Um acompanhante adulto permanece com a criança durante todo o registro. O que ajuda mais é explicar antes, com palavras simples: vão colar \"adesivinhos\" na cabeça para ouvir como o cérebro conversa, não dói e não dá choque. Levar o brinquedo ou a mantinha preferida também costuma acalmar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como faço para agendar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O atendimento é feito mediante agendamento. Fale com a nossa equipe pelo WhatsApp para verificar a disponibilidade, confirmar o preparo adequado ao seu pedido médico e tirar dúvidas sobre o exame. Tenha o pedido médico em mãos ao entrar em contato: é ele que define o protocolo e, portanto, o tempo e o preparo do seu exame."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "MedicalTest",
+      "@id": "https://eeglife.com.br/eletroencefalograma/#exame",
+      "name": "Eletroencefalograma (EEG)",
+      "alternateName": "EEG",
+      "description": "Exame que registra a atividade elétrica do cérebro por meio de eletrodos posicionados no couro cabeludo, com laudo médico.",
+      "usedToDiagnose": [
+        {
+          "@type": "MedicalCondition",
+          "name": "Epilepsia"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "Crises epilépticas"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "Encefalopatias"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="pagina-home">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho" data-cabecalho>
+  <div class="cabecalho__in wrap">
+    <a class="cabecalho__marca" href="/" aria-label="EEGLife — página inicial">
+      
+<span class="logo">
+  <svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+    <circle cx="32" cy="32" r="31" class="logo__disco"/>
+    <circle cx="32" cy="32" r="25.5" class="logo__anel"/>
+    <path class="logo__tracado"
+          d="M8 32h5.4l2.9-5.2 3.1 9.1 2.9-6.1 2.4 2.1L30 12.4 34.4 50l3.5-19.6 2.6 3.4 2.9-5.3 3 6.1 2.2-2.6H56"
+          fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span class="logo__texto">
+    <span class="logo__nome">EEG<em>Life</em></span>
+    <span class="logo__sub">Neurodiagnósticos</span>
+  </span>
+</span>
+    </a>
+    <button class="nav-toggle" type="button" data-nav-toggle
+            aria-controls="nav-principal" aria-expanded="false"
+            aria-label="Abrir o menu de navegação">
+      <span class="nav-toggle__barras" aria-hidden="true"></span>
+      <span data-nav-rotulo>Menu</span>
+    </button>
+    <nav class="nav" id="nav-principal" aria-label="Navegação principal">
+      <a href="/eletroencefalograma/">Eletroencefalograma</a>
+<a href="/como-funciona-o-exame/">Como funciona</a>
+<a href="/preparo-para-eletroencefalograma/">Preparo</a>
+<a href="/perguntas-frequentes/">Dúvidas</a>
+<a href="/sobre/">A EEGLife</a>
+      <a class="nav__contato" href="/contato/">Contato</a>
+    </nav>
+    <a class="cabecalho__cta" href="https://wa.me/5521998901775?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20disponibilidade%20para%20agendar%20um%20eletroencefalograma%20(EEG)%20com%20a%20EEGLife." target="_blank"
+         rel="noopener noreferrer" data-eeg-cta="cabecalho">Agendar</a>
+  </div>
+</header>
+  
+  <main id="conteudo" tabindex="-1">
+<section class="hero">
+    <div class="tracado tracado--hero" aria-hidden="true">
+    <svg viewBox="0 0 1440 270" preserveAspectRatio="none"
+           aria-hidden="true" focusable="false">
+      <g class="tracado__canal" style="--canal:0" transform="translate(0 3.78)">
+      <path d="M0 23.2 L4.2 23.2 L8.5 23.2 L12.7 23.1 L16.9 22.7 L21.2 22.3 L25.4 21.9 L29.6 21 L33.9 19.9 L38.1 19.2 L42.4 18.2 L46.6 18.1 L50.8 18.6 L55.1 19.4 L59.3 19.7 L63.5 20.5 L67.8 20.8 L72 19.9 L76.2 19.8 L80.5 20.1 L84.7 19.3 L88.9 20.3 L93.2 20.4 L97.4 22.5 L101.6 24 L105.9 24.6 L110.1 26.6 L114.4 27.1 L118.6 26.6 L122.8 26.2 L127.1 26.7 L131.3 25.8 L135.5 24.5 L139.8 22.2 L144 22.3 L148.2 20.9 L152.5 22.6 L156.7 24.7 L160.9 27.7 L165.2 27.1 L169.4 28.8 L173.6 31.1 L177.9 29.9 L182.1 30.4 L186.4 28.8 L190.6 30 L194.8 30.5 L199.1 30 L203.3 34.3 L207.5 38 L211.8 40.2 L216 40.9 L220.2 43.3 L224.5 44.4 L228.7 42.1 L232.9 41.6 L237.2 36.6 L241.4 32.6 L245.6 29.2 L249.9 27 L254.1 24 L258.4 24.6 L262.6 26.3 L266.8 28.3 L271.1 29.1 L275.3 28.3 L279.5 27.1 L283.8 27.7 L288 27.1 L292.2 23.4 L296.5 23.3 L300.7 21 L304.9 20.5 L309.2 21.4 L313.4 24.7 L317.6 26.5 L321.9 27.9 L326.1 28.7 L330.4 27.9 L334.6 28.6 L338.8 24.6 L343.1 20.3 L347.3 16.7 L351.5 13.2 L355.8 10.6 L360 10.3 L364.2 10 L368.5 9.8 L372.7 11.7 L376.9 11.7 L381.2 9.9 L385.4 8.8 L389.6 8.4 L393.9 9.1 L398.1 9 L402.4 6.8 L406.6 4.5 L410.8 7.7 L415.1 10.1 L419.3 12.4 L423.5 16.1 L427.8 21.3 L432 22.3 L436.2 26 L440.5 24.6 L444.7 23.6 L448.9 20.8 L453.2 19.4 L457.4 17.8 L461.6 16 L465.9 16 L470.1 15.9 L474.4 18.5 L478.6 19.7 L482.8 20 L487.1 21.3 L491.3 21.6 L495.5 21.4 L499.8 20.8 L504 20.8 L508.2 21 L512.5 20.8 L516.7 23.5 L520.9 26.3 L525.2 27.4 L529.4 29.6 L533.6 32.6 L537.9 35.9 L542.1 40.3 L546.4 42.5 L550.6 43.1 L554.8 42.2 L559.1 40.3 L563.3 38.1 L567.5 33.3 L571.8 30.1 L576 28.9 L580.2 29.4 L584.5 29.5 L588.7 30.3 L592.9 29.4 L597.2 29.2 L601.4 28.3 L605.6 27.7 L609.9 25.6 L614.1 23.2 L618.4 20.6 L622.6 21 L626.8 22.8 L631.1 25.8 L635.3 27.6 L639.5 32.7 L643.8 36.6 L648 37.9 L652.2 37.8 L656.5 38.3 L660.7 34.1 L664.9 30.5 L669.2 28.2 L673.4 25.4 L677.6 23.6 L681.9 22.6 L686.1 20.5 L690.4 19.5 L694.6 21.1 L698.8 21.1 L703.1 19.8 L707.3 19.1 L711.5 16 L715.8 11.6 L720 8.8 L724.2 6.3 L728.5 6.5 L732.7 5.8 L736.9 7.1 L741.2 8.6 L745.4 12.7 L749.6 15.8 L753.9 16.9 L758.1 17.6 L762.4 18.5 L766.6 20.6 L770.8 17 L775.1 14.3 L779.3 12.5 L783.5 10.6 L787.8 11.2 L792 12.1 L796.2 15.2 L800.5 16 L804.7 15.4 L808.9 15.9 L813.2 17.4 L817.4 15.2 L821.6 13 L825.9 13.2 L830.1 11.6 L834.4 11.9 L838.6 12.8 L842.8 13.1 L847.1 15.1 L851.3 20.2 L855.5 24.7 L859.8 28.8 L864 33.7 L868.2 34.4 L872.5 33 L876.7 32.5 L880.9 32.6 L885.2 31.7 L889.4 32.7 L893.6 33.5 L897.9 34.3 L902.1 33 L906.4 35.2 L910.6 37.3 L914.8 37.4 L919.1 37 L923.3 34.5 L927.5 32.4 L931.8 28.9 L936 27.6 L940.2 24.8 L944.5 23.6 L948.7 26.7 L952.9 29.1 L957.2 31.5 L961.4 34.9 L965.6 37.8 L969.9 37.5 L974.1 38.6 L978.4 37.4 L982.6 37.9 L986.8 35.8 L991.1 33.2 L995.3 31.9 L999.5 30.1 L1003.8 28.9 L1008 28.3 L1012.2 28.1 L1016.5 29.5 L1020.7 29.9 L1024.9 29.3 L1029.2 26.1 L1033.4 21.7 L1037.6 18.1 L1041.9 15.4 L1046.1 10.9 L1050.4 10 L1054.6 10.5 L1058.8 12 L1063.1 11.7 L1067.3 15.7 L1071.5 18.3 L1075.8 20.1 L1080 22.6 L1084.2 22.6 L1088.5 21.1 L1092.7 18.4 L1096.9 16.8 L1101.2 14.8 L1105.4 15.4 L1109.6 15.2 L1113.9 15.5 L1118.1 18.4 L1122.4 17.6 L1126.6 20.1 L1130.8 19.5 L1135.1 15.9 L1139.3 12.8 L1143.5 8.1 L1147.8 5.1 L1152 2.6 L1156.2 3 L1160.5 3.9 L1164.7 6 L1168.9 8.8 L1173.2 14.2 L1177.4 15.7 L1181.6 20.4 L1185.9 20.4 L1190.1 21.7 L1194.4 21.3 L1198.6 20.2 L1202.8 20.3 L1207.1 19.7 L1211.3 20.6 L1215.5 24.2 L1219.8 28.8 L1224 31.1 L1228.2 34.7 L1232.5 36.8 L1236.7 36.8 L1240.9 33.3 L1245.2 30.9 L1249.4 29.1 L1253.6 26.3 L1257.9 23.6 L1262.1 20.3 L1266.4 22.1 L1270.6 22.4 L1274.8 24.5 L1279.1 26.9 L1283.3 29.5 L1287.5 32.8 L1291.8 34 L1296 35.5 L1300.2 35.8 L1304.5 33.4 L1308.7 30.9 L1312.9 30.4 L1317.2 31.3 L1321.4 31.5 L1325.6 31.5 L1329.9 33 L1334.1 34.2 L1338.4 34 L1342.6 33.4 L1346.8 31.2 L1351.1 29.2 L1355.3 26.9 L1359.5 25 L1363.8 23.9 L1368 22.8 L1372.2 22.5 L1376.5 22.5 L1380.7 22.4 L1384.9 22.8 L1389.2 22.7 L1393.4 22.8 L1397.6 23.3 L1401.9 23.3 L1406.1 22.8 L1410.4 22.7 L1414.6 22.6 L1418.8 22.4 L1423.1 22.5 L1427.3 22.8 L1431.5 22.9 L1435.8 23.1 L1440 23.2" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    </g>
+<g class="tracado__canal" style="--canal:1" transform="translate(0 57.78)">
+      <path d="M0 23.2 L4.2 23.1 L8.5 22.8 L12.7 22.4 L16.9 22 L21.2 21.3 L25.4 20.5 L29.6 20.5 L33.9 20.7 L38.1 20.1 L42.4 20.1 L46.6 20.2 L50.8 19.9 L55.1 19.2 L59.3 19.5 L63.5 19.3 L67.8 20.1 L72 20.5 L76.2 23.1 L80.5 25.6 L84.7 26.5 L88.9 26.6 L93.2 27 L97.4 27.4 L101.6 24.5 L105.9 21.9 L110.1 20.5 L114.4 20.5 L118.6 20.4 L122.8 22.9 L127.1 23.4 L131.3 26 L135.5 27 L139.8 27 L144 25.6 L148.2 26.9 L152.5 27.8 L156.7 28.5 L160.9 29.9 L165.2 33.9 L169.4 37 L173.6 38.8 L177.9 43.1 L182.1 45.8 L186.4 42.2 L190.6 40 L194.8 36.2 L199.1 33.1 L203.3 30.4 L207.5 25.5 L211.8 22.4 L216 23.8 L220.2 23.5 L224.5 25.6 L228.7 23.9 L232.9 22.5 L237.2 22.7 L241.4 22.3 L245.6 19.5 L249.9 20.3 L254.1 19.4 L258.4 21.5 L262.6 22.4 L266.8 23.4 L271.1 25.9 L275.3 28 L279.5 27.4 L283.8 21.9 L288 16 L292.2 11.7 L296.5 6.9 L300.7 3.2 L304.9 5.3 L309.2 7.5 L313.4 7.6 L317.6 8 L321.9 8.7 L326.1 12 L330.4 13 L334.6 12.3 L338.8 11.5 L343.1 13 L347.3 14.5 L351.5 17.8 L355.8 19.5 L360 22.7 L364.2 25.7 L368.5 30.5 L372.7 29 L376.9 25.4 L381.2 21.8 L385.4 19.8 L389.6 17 L393.9 17.4 L398.1 18.5 L402.4 21.2 L406.6 24.3 L410.8 25.1 L415.1 27.9 L419.3 29 L423.5 28 L427.8 29.9 L432 30.4 L436.2 31.3 L440.5 32 L444.7 35.4 L448.9 40 L453.2 40.5 L457.4 40.6 L461.6 40.1 L465.9 40.7 L470.1 40 L474.4 33.6 L478.6 27.8 L482.8 23.6 L487.1 23.9 L491.3 25.2 L495.5 27.4 L499.8 29.1 L504 28.3 L508.2 29 L512.5 25.4 L516.7 23.2 L520.9 20.4 L525.2 20.9 L529.4 18.2 L533.6 20.3 L537.9 23 L542.1 24.4 L546.4 24.3 L550.6 28.1 L554.8 26.9 L559.1 23.6 L563.3 19.3 L567.5 15.7 L571.8 10.3 L576 7.9 L580.2 6.4 L584.5 6.2 L588.7 7 L592.9 8.1 L597.2 10.4 L601.4 9.7 L605.6 8.8 L609.9 10 L614.1 9.4 L618.4 8.4 L622.6 11.7 L626.8 16.1 L631.1 19.1 L635.3 24.2 L639.5 28.4 L643.8 29.4 L648 29.8 L652.2 31 L656.5 26.8 L660.7 21.3 L664.9 20.6 L669.2 18.9 L673.4 18.1 L677.6 17.8 L681.9 19.3 L686.1 22.6 L690.4 25.7 L694.6 28.3 L698.8 27.4 L703.1 29.9 L707.3 31 L711.5 30.4 L715.8 31.1 L720 31 L724.2 35.8 L728.5 40.6 L732.7 44.2 L736.9 44.5 L741.2 44.2 L745.4 42.9 L749.6 41 L753.9 37.6 L758.1 34.5 L762.4 28.4 L766.6 24.5 L770.8 25.8 L775.1 26.6 L779.3 25.8 L783.5 27.9 L787.8 26.5 L792 27.1 L796.2 24 L800.5 24 L804.7 22.8 L808.9 23.8 L813.2 26.2 L817.4 25.7 L821.6 25.2 L825.9 29.1 L830.1 31 L834.4 28.1 L838.6 26.5 L842.8 20.8 L847.1 14.1 L851.3 11.5 L855.5 9.5 L859.8 9 L864 7.6 L868.2 7.8 L872.5 11.8 L876.7 12.3 L880.9 14.6 L885.2 15.9 L889.4 13 L893.6 10 L897.9 11.7 L902.1 14.6 L906.4 14.8 L910.6 18.8 L914.8 22.2 L919.1 27.8 L923.3 28.5 L927.5 29.4 L931.8 25.6 L936 23.2 L940.2 22.4 L944.5 18.9 L948.7 18.4 L952.9 19.5 L957.2 22.2 L961.4 25.4 L965.6 29.2 L969.9 28.3 L974.1 30.6 L978.4 30.5 L982.6 30.2 L986.8 28.1 L991.1 26.7 L995.3 30.6 L999.5 33.2 L1003.8 36.8 L1008 41.8 L1012.2 45.9 L1016.5 46.5 L1020.7 46.7 L1024.9 41.4 L1029.2 36.4 L1033.4 31.1 L1037.6 26.9 L1041.9 25 L1046.1 24 L1050.4 24.6 L1054.6 24.2 L1058.8 27.4 L1063.1 27.8 L1067.3 27.8 L1071.5 29.3 L1075.8 28.3 L1080 26.4 L1084.2 24.1 L1088.5 21.7 L1092.7 22.4 L1096.9 26.1 L1101.2 29.5 L1105.4 30 L1109.6 27.4 L1113.9 27.2 L1118.1 24 L1122.4 20.3 L1126.6 16.9 L1130.8 13.9 L1135.1 10.3 L1139.3 6.7 L1143.5 7.7 L1147.8 8.1 L1152 11.9 L1156.2 13.1 L1160.5 13.6 L1164.7 10.8 L1168.9 11.9 L1173.2 9.6 L1177.4 8 L1181.6 8.7 L1185.9 11.6 L1190.1 17.9 L1194.4 22.7 L1198.6 26.1 L1202.8 27.6 L1207.1 25.9 L1211.3 24.1 L1215.5 23.2 L1219.8 21.7 L1224 16.3 L1228.2 13.8 L1232.5 16.7 L1236.7 19.3 L1240.9 22.7 L1245.2 25.1 L1249.4 29.1 L1253.6 31 L1257.9 31.3 L1262.1 29 L1266.4 29.2 L1270.6 31.1 L1274.8 33.9 L1279.1 35.1 L1283.3 38.8 L1287.5 40.7 L1291.8 39.6 L1296 38.7 L1300.2 37.1 L1304.5 33.8 L1308.7 29.3 L1312.9 25.9 L1317.2 23.9 L1321.4 23.9 L1325.6 22.1 L1329.9 22.8 L1334.1 24.7 L1338.4 25.6 L1342.6 27.1 L1346.8 26.1 L1351.1 26.7 L1355.3 25 L1359.5 24.2 L1363.8 23.4 L1368 22.9 L1372.2 23.4 L1376.5 24.8 L1380.7 24.7 L1384.9 25.3 L1389.2 24.5 L1393.4 23.9 L1397.6 22.8 L1401.9 22.3 L1406.1 20.9 L1410.4 20.4 L1414.6 20.6 L1418.8 21.1 L1423.1 21.7 L1427.3 22.1 L1431.5 22.5 L1435.8 22.9 L1440 23.2" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    </g>
+<g class="tracado__canal" style="--canal:2" transform="translate(0 111.78)">
+      <path d="M0 23.2 L4.2 23.5 L8.5 23.8 L12.7 24.1 L16.9 24.5 L21.2 24.4 L25.4 23.9 L29.6 23.7 L33.9 23.4 L38.1 24.3 L42.4 24.9 L46.6 26 L50.8 27.7 L55.1 28.3 L59.3 28.5 L63.5 27.5 L67.8 26.7 L72 25.3 L76.2 24.2 L80.5 24.2 L84.7 22.4 L88.9 21.6 L93.2 21.8 L97.4 19.6 L101.6 19.3 L105.9 16.6 L110.1 13.9 L114.4 14 L118.6 13.7 L122.8 17.1 L127.1 18.8 L131.3 23.1 L135.5 25.2 L139.8 26.2 L144 22.3 L148.2 21.3 L152.5 19.3 L156.7 15.3 L160.9 12 L165.2 9.9 L169.4 8.8 L173.6 13.2 L177.9 12.8 L182.1 14.9 L186.4 13.7 L190.6 15.1 L194.8 14.8 L199.1 18 L203.3 20.8 L207.5 24.9 L211.8 29.7 L216 35.8 L220.2 36.6 L224.5 35.1 L228.7 34.9 L232.9 33.2 L237.2 32 L241.4 29.7 L245.6 30.3 L249.9 31.6 L254.1 34.9 L258.4 33.1 L262.6 31.4 L266.8 32.9 L271.1 29.4 L275.3 28.4 L279.5 28 L283.8 30.6 L288 31.6 L292.2 36.2 L296.5 40 L300.7 40.9 L304.9 40.8 L309.2 35.1 L313.4 27 L317.6 23.8 L321.9 19.4 L326.1 15.7 L330.4 15.1 L334.6 14 L338.8 17.4 L343.1 18.3 L347.3 16.3 L351.5 16.2 L355.8 11.3 L360 11.4 L364.2 9.9 L368.5 11.4 L372.7 17.1 L376.9 17.8 L381.2 21.9 L385.4 21.6 L389.6 17.4 L393.9 11.8 L398.1 10.7 L402.4 7.5 L406.6 8.7 L410.8 10.8 L415.1 10.6 L419.3 15.2 L423.5 18.2 L427.8 19.1 L432 20 L436.2 22.1 L440.5 22.7 L444.7 25.7 L448.9 29.8 L453.2 35.3 L457.4 35.9 L461.6 38.2 L465.9 37.7 L470.1 39.2 L474.4 36.8 L478.6 30.6 L482.8 27.9 L487.1 25.5 L491.3 24.9 L495.5 26.3 L499.8 30.4 L504 32.9 L508.2 32.6 L512.5 31.6 L516.7 32.5 L520.9 30.2 L525.2 31.5 L529.4 29.2 L533.6 29.8 L537.9 32 L542.1 32.7 L546.4 30.5 L550.6 28.6 L554.8 23.7 L559.1 21.2 L563.3 13.2 L567.5 9.6 L571.8 6.8 L576 8.1 L580.2 9.4 L584.5 10.2 L588.7 13.6 L592.9 16.3 L597.2 16 L601.4 15.3 L605.6 12.9 L609.9 12.3 L614.1 15 L618.4 17.9 L622.6 20.2 L626.8 21 L631.1 20.8 L635.3 18.8 L639.5 15.6 L643.8 10.3 L648 7.6 L652.2 7.5 L656.5 12.3 L660.7 17.2 L664.9 22.9 L669.2 29.1 L673.4 31.1 L677.6 30.1 L681.9 30.3 L686.1 32.6 L690.4 31.2 L694.6 29.8 L698.8 33.9 L703.1 37.1 L707.3 39.6 L711.5 37.4 L715.8 37.1 L720 32.1 L724.2 27.9 L728.5 25.5 L732.7 22.7 L736.9 23.2 L741.2 24.1 L745.4 29.3 L749.6 35.4 L753.9 36 L758.1 37.1 L762.4 36.8 L766.6 36 L770.8 34.4 L775.1 29 L779.3 25.9 L783.5 24.2 L787.8 22.3 L792 24.7 L796.2 19.9 L800.5 17.1 L804.7 14.5 L808.9 7.8 L813.2 4.7 L817.4 1.7 L821.6 4.5 L825.9 8.9 L830.1 10.9 L834.4 16.1 L838.6 20.1 L842.8 20.6 L847.1 20.5 L851.3 18.2 L855.5 16.7 L859.8 17.4 L864 18.7 L868.2 20.8 L872.5 19 L876.7 21.7 L880.9 22.2 L885.2 16.6 L889.4 15.4 L893.6 16.1 L897.9 16 L902.1 20 L906.4 24 L910.6 30.6 L914.8 33.9 L919.1 39.3 L923.3 42.3 L927.5 42.9 L931.8 39.8 L936 35.3 L940.2 34.9 L944.5 34 L948.7 35.8 L952.9 35.2 L957.2 33.2 L961.4 33.4 L965.6 32.9 L969.9 31.1 L974.1 24.6 L978.4 23.2 L982.6 23.3 L986.8 26.8 L991.1 28.1 L995.3 33.6 L999.5 36.4 L1003.8 36.7 L1008 32.6 L1012.2 27.9 L1016.5 26.4 L1020.7 23.7 L1024.9 18.1 L1029.2 14.8 L1033.4 15.7 L1037.6 16 L1041.9 14.2 L1046.1 12.4 L1050.4 11.2 L1054.6 9.1 L1058.8 6.2 L1063.1 6.6 L1067.3 9.3 L1071.5 14 L1075.8 18.9 L1080 21.5 L1084.2 25.9 L1088.5 27.3 L1092.7 25.9 L1096.9 19.1 L1101.2 15.6 L1105.4 13.9 L1109.6 11.3 L1113.9 11.8 L1118.1 15.1 L1122.4 19.3 L1126.6 17.6 L1130.8 15.5 L1135.1 14.5 L1139.3 15.7 L1143.5 17.4 L1147.8 23.1 L1152 27.2 L1156.2 31.8 L1160.5 35.2 L1164.7 37.8 L1168.9 37.7 L1173.2 38.3 L1177.4 38.4 L1181.6 33.5 L1185.9 29.7 L1190.1 26.6 L1194.4 26.7 L1198.6 28.6 L1202.8 28.8 L1207.1 30.4 L1211.3 30.6 L1215.5 29.4 L1219.8 28.1 L1224 28.5 L1228.2 25.1 L1232.5 24.8 L1236.7 25.9 L1240.9 29.9 L1245.2 34.6 L1249.4 33.3 L1253.6 29.2 L1257.9 23.9 L1262.1 16.8 L1266.4 13.9 L1270.6 13.5 L1274.8 14 L1279.1 13.9 L1283.3 13.7 L1287.5 15.7 L1291.8 15.6 L1296 13.6 L1300.2 13.3 L1304.5 13.5 L1308.7 12.3 L1312.9 14.4 L1317.2 18.6 L1321.4 20.1 L1325.6 21.6 L1329.9 24.6 L1334.1 24.7 L1338.4 24.4 L1342.6 22.7 L1346.8 20.6 L1351.1 18.9 L1355.3 19.8 L1359.5 20.4 L1363.8 21.4 L1368 23.4 L1372.2 23.7 L1376.5 24.2 L1380.7 24.7 L1384.9 25.3 L1389.2 25.8 L1393.4 26.3 L1397.6 27 L1401.9 27.7 L1406.1 27.1 L1410.4 27 L1414.6 26.6 L1418.8 25.8 L1423.1 24.8 L1427.3 24 L1431.5 23.6 L1435.8 23.3 L1440 23.2" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    </g>
+<g class="tracado__canal" style="--canal:3" transform="translate(0 165.78)">
+      <path d="M0 23.2 L4.2 23.2 L8.5 23.3 L12.7 23.1 L16.9 23.2 L21.2 23.3 L25.4 23.3 L29.6 23.9 L33.9 24.8 L38.1 26.6 L42.4 28.2 L46.6 29.8 L50.8 29.9 L55.1 30 L59.3 29 L63.5 27.4 L67.8 26.1 L72 26.1 L76.2 26.1 L80.5 24.9 L84.7 26 L88.9 24.9 L93.2 24.5 L97.4 21.7 L101.6 21.2 L105.9 23.7 L110.1 26.1 L114.4 27.9 L118.6 27.5 L122.8 25.3 L127.1 21.3 L131.3 16.9 L135.5 13.1 L139.8 11.3 L144 8.9 L148.2 11.3 L152.5 12.8 L156.7 11.3 L160.9 10.7 L165.2 11.7 L169.4 10.9 L173.6 11.7 L177.9 14.4 L182.1 16.3 L186.4 24.6 L190.6 26 L194.8 26.3 L199.1 29.2 L203.3 26.5 L207.5 22.8 L211.8 20.3 L216 17.4 L220.2 19.3 L224.5 25.3 L228.7 29.3 L232.9 31.7 L237.2 31 L241.4 31.5 L245.6 29.8 L249.9 33.9 L254.1 38 L258.4 43.7 L262.6 48 L266.8 48.1 L271.1 43.8 L275.3 36.7 L279.5 27.1 L283.8 20.5 L288 17.9 L292.2 16.4 L296.5 20.2 L300.7 25 L304.9 26.9 L309.2 23.6 L313.4 18.7 L317.6 20.1 L321.9 16.4 L326.1 15.8 L330.4 17.9 L334.6 21.1 L338.8 19.4 L343.1 19.9 L347.3 17 L351.5 9 L355.8 2.5 L360 2 L364.2 2.8 L368.5 9.5 L372.7 14.6 L376.9 16.9 L381.2 19.7 L385.4 19.3 L389.6 22.5 L393.9 20.5 L398.1 24.1 L402.4 28.9 L406.6 31.2 L410.8 35.1 L415.1 37.1 L419.3 36.2 L423.5 32.7 L427.8 26.3 L432 24.1 L436.2 25.3 L440.5 28.8 L444.7 35.2 L448.9 36.4 L453.2 38.8 L457.4 41 L461.6 41.7 L465.9 35.2 L470.1 32.8 L474.4 30.6 L478.6 32.6 L482.8 32.1 L487.1 31.6 L491.3 28.1 L495.5 23.9 L499.8 16 L504 13.3 L508.2 13 L512.5 14.9 L516.7 16.3 L520.9 18.3 L525.2 21 L529.4 19.3 L533.6 15.8 L537.9 11.7 L542.1 7.9 L546.4 6.3 L550.6 9 L554.8 13.4 L559.1 13 L563.3 12.7 L567.5 12.2 L571.8 8.8 L576 6.8 L580.2 4.9 L584.5 7.4 L588.7 15.7 L592.9 22 L597.2 28.8 L601.4 33.1 L605.6 34.4 L609.9 32.6 L614.1 30.4 L618.4 28.1 L622.6 27 L626.8 29.6 L631.1 30.6 L635.3 29.9 L639.5 30.8 L643.8 27.6 L648 23.6 L652.2 22.4 L656.5 27.7 L660.7 31.7 L664.9 34.4 L669.2 39.9 L673.4 40.7 L677.6 37.6 L681.9 36.6 L686.1 32.1 L690.4 22.5 L694.6 15.9 L698.8 18 L703.1 15 L707.3 13.6 L711.5 15.7 L715.8 15.8 L720 15.1 L724.2 10.6 L728.5 8.7 L732.7 12.9 L736.9 19 L741.2 23 L745.4 26.6 L749.6 22.3 L753.9 22 L758.1 15.2 L762.4 9.8 L766.6 8.5 L770.8 7.7 L775.1 9.7 L779.3 11.7 L783.5 18.5 L787.8 22.1 L792 25.1 L796.2 23.9 L800.5 22.1 L804.7 26.7 L808.9 28.2 L813.2 33.8 L817.4 38.4 L821.6 37.5 L825.9 36.1 L830.1 32.9 L834.4 27.1 L838.6 23.5 L842.8 21.7 L847.1 26.5 L851.3 31 L855.5 32.4 L859.8 34 L864 36.3 L868.2 35.4 L872.5 33.2 L876.7 31.5 L880.9 29.7 L885.2 33.4 L889.4 34.4 L893.6 33.3 L897.9 32.1 L902.1 27.3 L906.4 18.2 L910.6 9 L914.8 3.6 L919.1 4 L923.3 8.5 L927.5 14 L931.8 14.5 L936 14.1 L940.2 17.4 L944.5 12.9 L948.7 12.1 L952.9 13.3 L957.2 17.9 L961.4 22.4 L965.6 23.6 L969.9 24.1 L974.1 17.8 L978.4 12.8 L982.6 7.4 L986.8 5.3 L991.1 6.7 L995.3 15 L999.5 20.3 L1003.8 27.1 L1008 34.4 L1012.2 34.5 L1016.5 34.8 L1020.7 34.5 L1024.9 36.2 L1029.2 39.1 L1033.4 38.1 L1037.6 40.5 L1041.9 38 L1046.1 35.9 L1050.4 28.8 L1054.6 24.4 L1058.8 20.3 L1063.1 21 L1067.3 22.1 L1071.5 27.7 L1075.8 29.9 L1080 33.1 L1084.2 33.8 L1088.5 28.9 L1092.7 27.4 L1096.9 22.8 L1101.2 19.8 L1105.4 16.6 L1109.6 14 L1113.9 11.8 L1118.1 12.9 L1122.4 12.5 L1126.6 5.7 L1130.8 2.8 L1135.1 1.1 L1139.3 5.5 L1143.5 12.9 L1147.8 20.3 L1152 24.8 L1156.2 24.1 L1160.5 20.7 L1164.7 19.5 L1168.9 17 L1173.2 14.5 L1177.4 17.7 L1181.6 19.6 L1185.9 20.7 L1190.1 19.6 L1194.4 20.9 L1198.6 18.5 L1202.8 17.9 L1207.1 17.9 L1211.3 24.5 L1215.5 31.2 L1219.8 37.3 L1224 39.6 L1228.2 42.1 L1232.5 40.9 L1236.7 40.7 L1240.9 34.7 L1245.2 28.5 L1249.4 25.2 L1253.6 23.5 L1257.9 24.8 L1262.1 25.1 L1266.4 23.4 L1270.6 24.1 L1274.8 20 L1279.1 17.4 L1283.3 17.4 L1287.5 21.5 L1291.8 25.6 L1296 29.6 L1300.2 27.6 L1304.5 27.6 L1308.7 22.7 L1312.9 20 L1317.2 14.6 L1321.4 10.6 L1325.6 9.9 L1329.9 10.2 L1334.1 12.9 L1338.4 14 L1342.6 15.3 L1346.8 16.2 L1351.1 17.1 L1355.3 18.3 L1359.5 18.9 L1363.8 22.2 L1368 22.9 L1372.2 24.1 L1376.5 23.8 L1380.7 23.3 L1384.9 21.5 L1389.2 21 L1393.4 20.7 L1397.6 20.8 L1401.9 22 L1406.1 23.4 L1410.4 24.1 L1414.6 24.7 L1418.8 24.7 L1423.1 24.3 L1427.3 24.1 L1431.5 23.8 L1435.8 23.6 L1440 23.2" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    </g>
+<g class="tracado__canal" style="--canal:4" transform="translate(0 219.78)">
+      <path d="M0 23.2 L4.2 23.3 L8.5 23.7 L12.7 24.1 L16.9 24.5 L21.2 25.3 L25.4 25.5 L29.6 25.9 L33.9 26.8 L38.1 26.8 L42.4 26.3 L46.6 24.4 L50.8 22.7 L55.1 22.1 L59.3 24 L63.5 25.3 L67.8 26.6 L72 26.3 L76.2 25.9 L80.5 23.2 L84.7 20.9 L88.9 22.3 L93.2 22.1 L97.4 22 L101.6 21.4 L105.9 18.3 L110.1 13.6 L114.4 11.5 L118.6 10.7 L122.8 10.8 L127.1 15.1 L131.3 20.2 L135.5 20.5 L139.8 21.5 L144 22.5 L148.2 19.6 L152.5 21.3 L156.7 19.6 L160.9 21 L165.2 24.2 L169.4 25.5 L173.6 22.8 L177.9 20.3 L182.1 21.1 L186.4 25.2 L190.6 28.3 L194.8 37.9 L199.1 45.5 L203.3 50.4 L207.5 50.3 L211.8 44.5 L216 38.3 L220.2 31.9 L224.5 29 L228.7 30.5 L232.9 28.1 L237.2 27.8 L241.4 26.3 L245.6 21.4 L249.9 16.9 L254.1 19.9 L258.4 22.9 L262.6 27.3 L266.8 28.1 L271.1 25.4 L275.3 24.2 L279.5 15.5 L283.8 12.2 L288 9.4 L292.2 5.1 L296.5 9.8 L300.7 9.9 L304.9 13.8 L309.2 14.8 L313.4 15.8 L317.6 14.6 L321.9 18 L326.1 24.2 L330.4 31.5 L334.6 31.9 L338.8 33.6 L343.1 34 L347.3 31.1 L351.5 28.3 L355.8 28.8 L360 31.9 L364.2 32.9 L368.5 32.9 L372.7 37.8 L376.9 37.3 L381.2 36.7 L385.4 36.1 L389.6 38.2 L393.9 36.3 L398.1 38.7 L402.4 39 L406.6 32.6 L410.8 29.2 L415.1 24.3 L419.3 19.3 L423.5 19 L427.8 19.7 L432 19 L436.2 22.4 L440.5 19.2 L444.7 18.2 L448.9 15.9 L453.2 14.1 L457.4 17.6 L461.6 15.9 L465.9 20.3 L470.1 21 L474.4 16.9 L478.6 11 L482.8 10.2 L487.1 9.1 L491.3 13.6 L495.5 19.1 L499.8 24.4 L504 30.7 L508.2 29.8 L512.5 31.5 L516.7 29.5 L520.9 29.3 L525.2 30.8 L529.4 31.1 L533.6 30.4 L537.9 34.2 L542.1 31.3 L546.4 29.9 L550.6 27.6 L554.8 28.2 L559.1 31.7 L563.3 34.2 L567.5 36.7 L571.8 41.6 L576 42.1 L580.2 33.3 L584.5 27.6 L588.7 20.1 L592.9 21.9 L597.2 20.1 L601.4 19.1 L605.6 19.1 L609.9 18 L614.1 14.1 L618.4 7.2 L622.6 7.3 L626.8 13.6 L631.1 19.7 L635.3 20 L639.5 21.6 L643.8 18.1 L648 14.5 L652.2 12.3 L656.5 10.3 L660.7 9.7 L664.9 14.2 L669.2 14.6 L673.4 16.9 L677.6 20.3 L681.9 19.6 L686.1 22.6 L690.4 23.6 L694.6 29.9 L698.8 37 L703.1 41.6 L707.3 39.5 L711.5 38.4 L715.8 31.7 L720 29 L724.2 29.6 L728.5 31.1 L732.7 31.7 L736.9 35.2 L741.2 37.2 L745.4 34.4 L749.6 31.5 L753.9 29 L758.1 29.3 L762.4 31.3 L766.6 31.4 L770.8 28.4 L775.1 25 L779.3 21.4 L783.5 12.9 L787.8 8.7 L792 6.5 L796.2 5.3 L800.5 6.9 L804.7 12.5 L808.9 14.9 L813.2 12.7 L817.4 12.3 L821.6 11.2 L825.9 17.3 L830.1 22.1 L834.4 23.4 L838.6 25.6 L842.8 22.9 L847.1 22.2 L851.3 17.2 L855.5 16.1 L859.8 15.8 L864 21.9 L868.2 29.1 L872.5 34.5 L876.7 38.8 L880.9 37.1 L885.2 34.8 L889.4 31 L893.6 29.1 L897.9 28.7 L902.1 28.7 L906.4 31.3 L910.6 25 L914.8 18.5 L919.1 15 L923.3 12.6 L927.5 17 L931.8 25.5 L936 26.8 L940.2 29.9 L944.5 27.7 L948.7 23.1 L952.9 18.6 L957.2 16.7 L961.4 15.1 L965.6 13.4 L969.9 15.8 L974.1 15.3 L978.4 8.5 L982.6 8.7 L986.8 7.1 L991.1 9 L995.3 16.1 L999.5 20 L1003.8 23.5 L1008 23.9 L1012.2 25.6 L1016.5 20.4 L1020.7 17.4 L1024.9 17.8 L1029.2 22.1 L1033.4 22.5 L1037.6 27.2 L1041.9 27.7 L1046.1 28.1 L1050.4 26.9 L1054.6 28.4 L1058.8 30.3 L1063.1 37.3 L1067.3 41.3 L1071.5 42.5 L1075.8 40.8 L1080 33.7 L1084.2 30.8 L1088.5 23.6 L1092.7 20.6 L1096.9 20.9 L1101.2 20.8 L1105.4 19.1 L1109.6 19.8 L1113.9 15.3 L1118.1 12.4 L1122.4 15.4 L1126.6 17 L1130.8 22.2 L1135.1 21.5 L1139.3 19.7 L1143.5 20.5 L1147.8 13.2 L1152 9.4 L1156.2 6.6 L1160.5 2.9 L1164.7 7 L1168.9 13 L1173.2 15.4 L1177.4 20.2 L1181.6 24.6 L1185.9 24.3 L1190.1 21.9 L1194.4 26.4 L1198.6 32.6 L1202.8 35.3 L1207.1 35.7 L1211.3 33.3 L1215.5 27.1 L1219.8 24.9 L1224 23.4 L1228.2 22 L1232.5 28.6 L1236.7 36.3 L1240.9 37.7 L1245.2 36.8 L1249.4 38.5 L1253.6 37.1 L1257.9 31.3 L1262.1 28.4 L1266.4 27.5 L1270.6 26.4 L1274.8 27 L1279.1 19.2 L1283.3 14.2 L1287.5 11.6 L1291.8 8.3 L1296 12.5 L1300.2 16.6 L1304.5 18.9 L1308.7 20.1 L1312.9 19 L1317.2 16.7 L1321.4 16 L1325.6 15.6 L1329.9 14.4 L1334.1 17.3 L1338.4 17.8 L1342.6 16.8 L1346.8 16.6 L1351.1 17.8 L1355.3 19.4 L1359.5 20 L1363.8 23.4 L1368 26.3 L1372.2 27.4 L1376.5 27.5 L1380.7 27.7 L1384.9 27.5 L1389.2 26 L1393.4 24.7 L1397.6 25.3 L1401.9 25.7 L1406.1 26.1 L1410.4 25.9 L1414.6 24.7 L1418.8 24.3 L1423.1 23.9 L1427.3 23.8 L1431.5 23.7 L1435.8 23.5 L1440 23.2" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    </g>
+    </svg>
+  </div>
+    <div class="wrap hero__in">
+      <p class="hero__sobre">EEGLife — Neurodiagnósticos</p>
+      <h1 class="hero__titulo">Eletroencefalograma no Rio&nbsp;de&nbsp;Janeiro</h1>
+      <p class="hero__texto">
+        Registro da atividade elétrica do cérebro com laudo médico. Um exame
+        indolor, sem radiação e não invasivo, realizado mediante pedido médico e
+        agendamento.
+      </p>
+      <div class="hero__acoes"><a class="btn btn--destaque" href="https://wa.me/5521998901775?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20disponibilidade%20para%20agendar%20um%20eletroencefalograma%20(EEG)%20com%20a%20EEGLife."
+     target="_blank" rel="noopener noreferrer"
+     data-eeg-cta="agendamento">
+    <svg class="btn__icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.09c-.25.69-1.44 1.32-1.98 1.37-.54.05-1.04.21-3.54-.88-2.96-1.29-4.83-4.4-4.98-4.6-.14-.2-1.18-1.62-1.18-3.09 0-1.47.76-2.19 1.03-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.59.84 2.05.91 2.2.07.15.12.32.02.52-.1.2-.2.32-.39.54-.2.22-.31.3-.44.52-.13.22-.02.45.1.65.12.2.65 1.06 1.4 1.72.96.85 1.75 1.11 1.98 1.23.22.12.45.1.62-.07.17-.17.69-.8.88-1.08.19-.27.37-.22.62-.12.25.1 1.6.75 1.87.89.27.14.45.2.52.32.07.12.07.71-.18 1.4Z"/>
+    </svg>
+    <span>Agendar pelo WhatsApp</span>
+  </a>
+<a class="btn btn--fantasma" href="/eletroencefalograma/">Entenda o exame</a></div>
+      <ul class="hero__selos">
+        <li>Indolor</li>
+        <li>Sem radiação</li>
+        <li>Não invasivo</li>
+        <li>Todas as idades</li>
+      </ul>
+    </div>
+  </section>
+<section id="o-que-e" class="secao secao--claro">
+    <div class="wrap wrap--normal">
+      
+      <div class="duas-colunas">
+      <div class="duas-colunas__texto">
+        <p class="eyebrow">O exame</p>
+        <h2 class="secao__titulo">O que é o eletroencefalograma</h2>
+        <p class="texto-guia">
+          O eletroencefalograma — conhecido pela sigla EEG — registra a
+          atividade elétrica produzida pelos neurônios. Eletrodos posicionados
+          sobre o couro cabeludo captam esses sinais, que são amplificados e
+          traduzidos em um traçado contínuo.
+        </p>
+        <p>
+          É um exame <strong>funcional</strong>: ele não mostra a forma do
+          cérebro, como a tomografia ou a ressonância, mas sim como o cérebro
+          está funcionando ao longo do período de registro. Por isso é um dos
+          exames centrais na investigação de crises epilépticas e de outros
+          eventos neurológicos.
+        </p>
+        <p>
+          Os eletrodos apenas escutam. Nenhuma corrente elétrica é aplicada em
+          você em momento algum do exame.
+        </p>
+        <p class="secao__acao">
+          <a class="btn btn--texto" href="/eletroencefalograma/">Ver a página completa do EEG</a>
+        </p>
+      </div>
+      <div class="duas-colunas__arte"><figure class="ilustracao ilustracao--bandas">
+    <div class="bandas"><div class="banda">
+      <div class="banda__id">
+        <span class="banda__nome">Delta</span>
+        <span class="banda__hz">0,5 – 4 Hz</span>
+      </div>
+      <svg class="banda__tracado" viewBox="0 0 320 44" preserveAspectRatio="none"
+           role="img" aria-label="Traçado característico do ritmo Delta, de 0,5 – 4 Hz">
+        <path d="M0 22 L1.5 22.1 L2.9 22.4 L4.4 22.8 L5.8 23.5 L7.3 24.1 L8.7 24.8 L10.2 25.6 L11.6 26.4 L13.1 27.1 L14.5 28 L16 28.7 L17.5 29.3 L18.9 30.3 L20.4 31.1 L21.8 31.6 L23.3 31.9 L24.7 32.1 L26.2 31.9 L27.6 32.2 L29.1 31.6 L30.5 31.1 L32 30.7 L33.5 29.6 L34.9 28.6 L36.4 27.7 L37.8 27.6 L39.3 26.8 L40.7 26.6 L42.2 26.5 L43.6 25.2 L45.1 23.8 L46.5 23.9 L48 24.3 L49.5 23.5 L50.9 23.6 L52.4 23.5 L53.8 23.4 L55.3 22.9 L56.7 23.9 L58.2 23.4 L59.6 23.2 L61.1 23.9 L62.5 25 L64 25.7 L65.5 24.8 L66.9 24.7 L68.4 24.5 L69.8 24.7 L71.3 24.2 L72.7 23.2 L74.2 23.3 L75.6 22.2 L77.1 22.1 L78.5 20.9 L80 19.4 L81.5 17.3 L82.9 16.3 L84.4 15.1 L85.8 14.1 L87.3 13.4 L88.7 11.4 L90.2 10.1 L91.6 8.3 L93.1 7.5 L94.5 6.2 L96 5.5 L97.5 4 L98.9 4 L100.4 4.1 L101.8 3.4 L103.3 3 L104.7 3.8 L106.2 4.2 L107.6 4.8 L109.1 4.6 L110.5 5.1 L112 6.3 L113.5 8.1 L114.9 9 L116.4 10.8 L117.8 13 L119.3 15.3 L120.7 17.2 L122.2 20 L123.6 21.1 L125.1 23.4 L126.5 25.3 L128 27.7 L129.5 29.8 L130.9 30.6 L132.4 31.8 L133.8 33 L135.3 34.7 L136.7 35.2 L138.2 35.6 L139.6 35.5 L141.1 35.2 L142.5 35.6 L144 35.7 L145.5 35.6 L146.9 35.5 L148.4 35.9 L149.8 34.9 L151.3 34 L152.7 32.5 L154.2 31.7 L155.6 31.8 L157.1 31.6 L158.5 30.4 L160 28.8 L161.5 28.6 L162.9 27.2 L164.4 27.2 L165.8 26.4 L167.3 25.9 L168.7 26.6 L170.2 26.7 L171.6 26.2 L173.1 26.2 L174.5 26.1 L176 26.8 L177.5 26.6 L178.9 27.2 L180.4 28.1 L181.8 28.1 L183.3 28.4 L184.7 29 L186.2 28.4 L187.6 27.8 L189.1 27.6 L190.5 28.6 L192 28.5 L193.5 27.5 L194.9 27 L196.4 26.2 L197.8 25.4 L199.3 25.5 L200.7 24.4 L202.2 23.1 L203.6 22.4 L205.1 20.2 L206.5 19.5 L208 18.4 L209.5 15.6 L210.9 13.8 L212.4 11.9 L213.8 9.9 L215.3 7.9 L216.7 6.1 L218.2 6 L219.6 5.5 L221.1 4.3 L222.5 3.6 L224 3 L225.5 2.4 L226.9 2.9 L228.4 3.3 L229.8 3.2 L231.3 3.7 L232.7 4.1 L234.2 4.3 L235.6 5.4 L237.1 6.9 L238.5 7.9 L240 9.6 L241.5 10.4 L242.9 12.6 L244.4 14.6 L245.8 16.8 L247.3 18.2 L248.7 20.4 L250.2 22 L251.6 23.4 L253.1 26 L254.5 27.9 L256 29.5 L257.5 29.8 L258.9 31.4 L260.4 31.5 L261.8 32.7 L263.3 32.9 L264.7 32.7 L266.2 32.7 L267.6 32.4 L269.1 33.4 L270.5 33.9 L272 33 L273.5 33 L274.9 33 L276.4 32.5 L277.8 32.3 L279.3 30.7 L280.7 29.6 L282.2 28.5 L283.6 27.8 L285.1 26.9 L286.5 26.3 L288 26.3 L289.5 25.7 L290.9 26 L292.4 26.1 L293.8 26.3 L295.3 25.9 L296.7 26.2 L298.2 25.9 L299.6 25.4 L301.1 25.1 L302.5 25.2 L304 24.9 L305.5 25.2 L306.9 25 L308.4 24.7 L309.8 24.6 L311.3 24.1 L312.7 23.9 L314.2 23.4 L315.6 23.1 L317.1 22.6 L318.5 22.3 L320 22" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              vector-effect="non-scaling-stroke"/>
+      </svg>
+      <p class="banda__nota">Predomina no sono profundo.</p>
+    </div>
+<div class="banda">
+      <div class="banda__id">
+        <span class="banda__nome">Teta</span>
+        <span class="banda__hz">4 – 8 Hz</span>
+      </div>
+      <svg class="banda__tracado" viewBox="0 0 320 44" preserveAspectRatio="none"
+           role="img" aria-label="Traçado característico do ritmo Teta, de 4 – 8 Hz">
+        <path d="M0 18 L1.5 18.5 L2.9 18.9 L4.4 19.1 L5.8 19.2 L7.3 19.1 L8.7 19.1 L10.2 19.1 L11.6 18.9 L13.1 19.2 L14.5 19.8 L16 20.4 L17.5 20.9 L18.9 20.9 L20.4 20.2 L21.8 19.4 L23.3 18.2 L24.7 16.4 L26.2 14.1 L27.6 11.7 L29.1 8.5 L30.5 6.9 L32 5.4 L33.5 4.8 L34.9 5.8 L36.4 7.7 L37.8 10.7 L39.3 13.9 L40.7 17.2 L42.2 20.4 L43.6 23.8 L45.1 25.4 L46.5 26.6 L48 27 L49.5 26.2 L50.9 24.9 L52.4 23.9 L53.8 22.4 L55.3 21.3 L56.7 21.7 L58.2 21.8 L59.6 23.3 L61.1 24.2 L62.5 25.6 L64 25.7 L65.5 25 L66.9 24.5 L68.4 22.9 L69.8 20.1 L71.3 16.7 L72.7 13.3 L74.2 8.9 L75.6 6.1 L77.1 3 L78.5 1.9 L80 2.5 L81.5 3.9 L82.9 6.3 L84.4 9.4 L85.8 13.3 L87.3 16.1 L88.7 18.8 L90.2 21 L91.6 22.7 L93.1 23.8 L94.5 23.8 L96 24 L97.5 23.4 L98.9 22.6 L100.4 22.3 L101.8 22.8 L103.3 22.8 L104.7 24.1 L106.2 25.4 L107.6 27.1 L109.1 28.5 L110.5 29.4 L112 29.7 L113.5 27.7 L114.9 25.8 L116.4 22.1 L117.8 18.3 L119.3 13.7 L120.7 9.7 L122.2 5.8 L123.6 3.3 L125.1 2.2 L126.5 1.4 L128 2 L129.5 4.2 L130.9 7.6 L132.4 10.6 L133.8 13.9 L135.3 16.5 L136.7 18.5 L138.2 20.9 L139.6 21.2 L141.1 21.2 L142.5 21.5 L144 20.4 L145.5 19.8 L146.9 19.8 L148.4 20 L149.8 22.1 L151.3 23.3 L152.7 25.3 L154.2 27.3 L155.6 29.8 L157.1 31.3 L158.5 31.5 L160 29.7 L161.5 27.5 L162.9 23.6 L164.4 20.3 L165.8 15.4 L167.3 11.6 L168.7 7.3 L170.2 4.3 L171.6 3.6 L173.1 2.8 L174.5 4.1 L176 5.6 L177.5 7.6 L178.9 11.1 L180.4 12.9 L181.8 14.6 L183.3 16.1 L184.7 16.8 L186.2 17.1 L187.6 17.7 L189.1 18.1 L190.5 17.2 L192 17.8 L193.5 18.7 L194.9 20.1 L196.4 21.8 L197.8 24.8 L199.3 27 L200.7 29.8 L202.2 32.1 L203.6 33.9 L205.1 34.2 L206.5 32.3 L208 30.2 L209.5 26.4 L210.9 22.5 L212.4 18.8 L213.8 14.4 L215.3 11.1 L216.7 7.4 L218.2 6.2 L219.6 5.7 L221.1 6.2 L222.5 6.7 L224 8.3 L225.5 11.2 L226.9 13 L228.4 14.8 L229.8 15.2 L231.3 16 L232.7 15.9 L234.2 15.6 L235.6 15.6 L237.1 15.8 L238.5 16.3 L240 16.2 L241.5 18.2 L242.9 20.1 L244.4 22.5 L245.8 25.5 L247.3 29.2 L248.7 31.9 L250.2 33.5 L251.6 34.1 L253.1 33.9 L254.5 32.1 L256 28.7 L257.5 24.3 L258.9 19.8 L260.4 15.7 L261.8 11.7 L263.3 9 L264.7 6.8 L266.2 6.9 L267.6 7.1 L269.1 8.1 L270.5 9.8 L272 11.2 L273.5 13 L274.9 13.8 L276.4 14.7 L277.8 13.7 L279.3 12.7 L280.7 11.7 L282.2 11.3 L283.6 11.5 L285.1 12.4 L286.5 14.3 L288 16.4 L289.5 18.5 L290.9 21.5 L292.4 23.9 L293.8 26 L295.3 27.3 L296.7 27.8 L298.2 27.7 L299.6 26.4 L301.1 24.7 L302.5 23.2 L304 21.2 L305.5 19.5 L306.9 18.2 L308.4 17.1 L309.8 16.6 L311.3 16.5 L312.7 16.6 L314.2 17 L315.6 17.3 L317.1 17.6 L318.5 17.9 L320 18" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              vector-effect="non-scaling-stroke"/>
+      </svg>
+      <p class="banda__nota">Aparece na sonolência e no sono leve.</p>
+    </div>
+<div class="banda">
+      <div class="banda__id">
+        <span class="banda__nome">Alfa</span>
+        <span class="banda__hz">8 – 13 Hz</span>
+      </div>
+      <svg class="banda__tracado" viewBox="0 0 320 44" preserveAspectRatio="none"
+           role="img" aria-label="Traçado característico do ritmo Alfa, de 8 – 13 Hz">
+        <path d="M0 13.6 L1.1 13.7 L2.1 13.9 L3.2 14 L4.3 14.3 L5.3 14.5 L6.4 14.6 L7.5 14.5 L8.5 14 L9.6 13.1 L10.7 12.1 L11.7 11 L12.8 9.8 L13.9 9.1 L14.9 9.1 L16 9.9 L17.1 10.9 L18.1 12.1 L19.2 13.5 L20.3 14.8 L21.3 15.8 L22.4 16.5 L23.5 16.4 L24.5 15.9 L25.6 15.8 L26.7 15.7 L27.7 16.4 L28.8 17.6 L29.9 18.7 L30.9 19.5 L32 20.7 L33.1 20.6 L34.1 19 L35.2 16.5 L36.3 13.3 L37.3 9.2 L38.4 5.6 L39.5 3 L40.5 2 L41.6 2.3 L42.7 3.7 L43.7 6.9 L44.8 10.5 L45.9 12.7 L46.9 14.9 L48 15.5 L49.1 15.5 L50.1 14.9 L51.2 15 L52.3 14.5 L53.3 15.8 L54.4 17 L55.5 18.8 L56.5 21.3 L57.6 23.2 L58.7 24.3 L59.7 23.5 L60.8 21.1 L61.9 17.9 L62.9 14.1 L64 9.4 L65.1 6.3 L66.1 3.9 L67.2 2.3 L68.3 2.8 L69.3 4.3 L70.4 6.8 L71.5 9.7 L72.5 11.7 L73.6 13.7 L74.7 14.6 L75.7 14.5 L76.8 14 L77.9 13.6 L78.9 13.4 L80 14.9 L81.1 16.7 L82.1 19.4 L83.2 22.2 L84.3 24.1 L85.3 25.4 L86.4 25.3 L87.5 22.6 L88.5 19.1 L89.6 14.9 L90.7 10.6 L91.7 7 L92.8 4.1 L93.9 3.2 L94.9 3.8 L96 5.4 L97.1 7.8 L98.1 9.8 L99.2 10.9 L100.3 12.1 L101.3 12 L102.4 11.2 L103.5 11 L104.5 11.3 L105.6 11.7 L106.7 13.9 L107.7 16.7 L108.8 19.7 L109.9 22.7 L110.9 24.5 L112 26.2 L113.1 25.2 L114.1 23.1 L115.2 19.8 L116.3 16.4 L117.3 12.3 L118.4 8.8 L119.5 6.3 L120.5 5.7 L121.6 5.6 L122.7 7.2 L123.7 8.5 L124.8 9.6 L125.9 10.7 L126.9 10.5 L128 10.5 L129.1 9.1 L130.1 8.4 L131.2 8.9 L132.3 9.4 L133.3 11.9 L134.4 15.2 L135.5 18.3 L136.5 21.8 L137.6 24.1 L138.7 26 L139.7 25.3 L140.8 23.3 L141.9 20.1 L142.9 17.1 L144 13 L145.1 9.7 L146.1 8.3 L147.2 7.5 L148.3 7.6 L149.3 8.8 L150.4 9.3 L151.5 10.4 L152.5 10.7 L153.6 10.1 L154.7 9 L155.7 7.7 L156.8 6.3 L157.9 6.6 L158.9 7.6 L160 10.4 L161.1 13.4 L162.1 17.9 L163.2 21.7 L164.3 24.2 L165.3 25.3 L166.4 25.2 L167.5 24.3 L168.5 21.9 L169.6 18.9 L170.7 15.8 L171.7 13.1 L172.8 11.6 L173.9 10.4 L174.9 10.3 L176 10.6 L177.1 11.4 L178.1 11.2 L179.2 10.4 L180.3 9.4 L181.3 7.6 L182.4 5.8 L183.5 4.3 L184.5 4 L185.6 5.2 L186.7 8.1 L187.7 11.5 L188.8 15.5 L189.9 19.3 L190.9 22.3 L192 24.7 L193.1 24.7 L194.1 23.5 L195.2 21.2 L196.3 18.7 L197.3 15.9 L198.4 13.9 L199.5 13 L200.5 12.7 L201.6 13 L202.7 13.6 L203.7 13.9 L204.8 13.3 L205.9 11.3 L206.9 9.1 L208 6.4 L209.1 4.4 L210.1 3.2 L211.2 3.2 L212.3 5 L213.3 7.4 L214.4 10.8 L215.5 14.8 L216.5 19 L217.6 22.3 L218.7 24.1 L219.7 24.4 L220.8 23 L221.9 21.2 L222.9 19.2 L224 17.2 L225.1 15.9 L226.1 14.8 L227.2 14.4 L228.3 15.2 L229.3 15.6 L230.4 15 L231.5 13.5 L232.5 12 L233.6 9.4 L234.7 6.8 L235.7 4.2 L236.8 2.5 L237.9 2.3 L238.9 3.1 L240 6 L241.1 9.9 L242.1 14.5 L243.2 17.9 L244.3 21.2 L245.3 23 L246.4 22.7 L247.5 21.3 L248.5 20.3 L249.6 18.6 L250.7 17.3 L251.7 16.4 L252.8 16.1 L253.9 16.5 L254.9 17 L256 17.1 L257.1 16.9 L258.1 15.3 L259.2 12.8 L260.3 9.9 L261.3 7 L262.4 4 L263.5 2.5 L264.5 2.1 L265.6 3.6 L266.7 5.5 L267.7 9 L268.8 13.3 L269.9 16.7 L270.9 19.3 L272 21.1 L273.1 21.4 L274.1 20.5 L275.2 19.7 L276.3 17.9 L277.3 16.8 L278.4 17.3 L279.5 17.9 L280.5 19.1 L281.6 19.2 L282.7 19.4 L283.7 18.8 L284.8 16.9 L285.9 14.5 L286.9 11.2 L288 8.1 L289.1 5.9 L290.1 4.8 L291.2 4.4 L292.3 5.2 L293.3 7.5 L294.4 10.1 L295.5 12.7 L296.5 14.6 L297.6 15.6 L298.7 16.1 L299.7 15.9 L300.8 15.7 L301.9 15.2 L302.9 14.9 L304 14.9 L305.1 15 L306.1 15.4 L307.2 15.7 L308.3 16 L309.3 15.9 L310.4 15.6 L311.5 14.8 L312.5 14.1 L313.6 13.3 L314.7 12.8 L315.7 12.6 L316.8 12.6 L317.9 12.9 L318.9 13.3 L320 13.6" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              vector-effect="non-scaling-stroke"/>
+      </svg>
+      <p class="banda__nota">Típico do repouso com os olhos fechados.</p>
+    </div>
+<div class="banda">
+      <div class="banda__id">
+        <span class="banda__nome">Beta</span>
+        <span class="banda__hz">13 – 30 Hz</span>
+      </div>
+      <svg class="banda__tracado" viewBox="0 0 320 44" preserveAspectRatio="none"
+           role="img" aria-label="Traçado característico do ritmo Beta, de 13 – 30 Hz">
+        <path d="M0 8.8 L0.5 8.9 L1 9 L1.6 8.9 L2.1 8.8 L2.6 8.7 L3.1 8.6 L3.6 8.4 L4.2 8.3 L4.7 8.3 L5.2 8.3 L5.7 8.4 L6.2 8.5 L6.8 8.5 L7.3 8.5 L7.8 8.5 L8.3 8.4 L8.8 8.2 L9.4 8.1 L9.9 8.3 L10.4 8.6 L10.9 9.2 L11.4 9.7 L12 10.5 L12.5 10.9 L13 11.2 L13.5 11 L14 10.7 L14.6 10 L15.1 9.5 L15.6 9 L16.1 8.2 L16.7 7.4 L17.2 6.8 L17.7 7.2 L18.2 7.7 L18.7 8 L19.3 7.8 L19.8 7.4 L20.3 6.7 L20.8 6.1 L21.3 6 L21.9 6.2 L22.4 5.8 L22.9 6.6 L23.4 7.2 L23.9 9.1 L24.5 10.2 L25 12.1 L25.5 13.8 L26 14.8 L26.5 14.2 L27.1 14 L27.6 12.4 L28.1 11.1 L28.6 9.3 L29.1 8.3 L29.7 8.1 L30.2 7.6 L30.7 7.7 L31.2 7.3 L31.7 7.1 L32.3 7.2 L32.8 6.9 L33.3 5.5 L33.8 5.1 L34.3 4.5 L34.9 3.4 L35.4 2.8 L35.9 3.9 L36.4 5.6 L36.9 7.7 L37.5 9.7 L38 12 L38.5 14.6 L39 16.3 L39.5 16.5 L40.1 15.4 L40.6 14.4 L41.1 12.5 L41.6 10.6 L42.1 8.9 L42.7 8.6 L43.2 7.9 L43.7 8.9 L44.2 8.4 L44.7 8.5 L45.3 7.6 L45.8 6.2 L46.3 5 L46.8 3.6 L47.3 2.5 L47.9 2.4 L48.4 3 L48.9 4.3 L49.4 5.6 L50 7.7 L50.5 10 L51 13.3 L51.5 15.6 L52 15.8 L52.6 16 L53.1 15.4 L53.6 14.5 L54.1 12.7 L54.6 10.6 L55.2 9.2 L55.7 8.2 L56.2 9 L56.7 9 L57.2 9.2 L57.8 9.9 L58.3 9.6 L58.8 8.2 L59.3 7 L59.8 5 L60.4 2.5 L60.9 1.8 L61.4 2.3 L61.9 2.5 L62.4 3.5 L63 6.9 L63.5 9.7 L64 12.3 L64.5 14.2 L65 14.8 L65.6 14.8 L66.1 13.6 L66.6 11.9 L67.1 10.9 L67.6 10 L68.2 10.8 L68.7 10 L69.2 11.3 L69.7 11.7 L70.2 11.6 L70.8 11.6 L71.3 11.1 L71.8 8.2 L72.3 6.5 L72.8 4.4 L73.4 1.6 L73.9 0.8 L74.4 0.8 L74.9 2.3 L75.4 3.4 L76 6 L76.5 8.6 L77 10.1 L77.5 11.5 L78 12.2 L78.6 13 L79.1 13.3 L79.6 12.1 L80.1 11.4 L80.7 10.2 L81.2 10.2 L81.7 10.5 L82.2 11.4 L82.7 11.4 L83.3 11.1 L83.8 10.3 L84.3 10 L84.8 7.6 L85.3 5.4 L85.9 3.6 L86.4 1.5 L86.9 0.2 L87.4 -0.5 L87.9 0.1 L88.5 2.4 L89 4.1 L89.5 6.5 L90 9.2 L90.5 11.4 L91.1 11.6 L91.6 12.5 L92.1 12.6 L92.6 11 L93.1 9.9 L93.7 10.5 L94.2 11.4 L94.7 12.6 L95.2 13.8 L95.7 14 L96.3 14.7 L96.8 14.8 L97.3 13.7 L97.8 11.4 L98.3 8.7 L98.9 6.1 L99.4 3.2 L99.9 1.2 L100.4 0.2 L100.9 0.4 L101.5 1.8 L102 4.4 L102.5 6.1 L103 7.8 L103.5 9.4 L104.1 10.4 L104.6 10.3 L105.1 10 L105.6 10 L106.1 9.6 L106.7 9.9 L107.2 11.2 L107.7 13.2 L108.2 14.6 L108.7 15.7 L109.3 16.3 L109.8 16.2 L110.3 14.1 L110.8 12.2 L111.3 8.6 L111.9 6.3 L112.4 3.6 L112.9 1.8 L113.4 2 L114 2.4 L114.5 4.3 L115 5.5 L115.5 7.3 L116 9.1 L116.6 8.9 L117.1 9.6 L117.6 8.8 L118.1 8.4 L118.6 8 L119.2 8.7 L119.7 9.9 L120.2 11.5 L120.7 13.9 L121.2 15 L121.8 16.8 L122.3 16.9 L122.8 16.8 L123.3 14.7 L123.8 12.9 L124.4 9.9 L124.9 6.5 L125.4 4.2 L125.9 3.6 L126.4 2.9 L127 3.6 L127.5 5.1 L128 5.3 L128.5 6.6 L129 6.9 L129.6 7.2 L130.1 6.9 L130.6 6.7 L131.1 6.9 L131.6 6.7 L132.2 6.5 L132.7 7.6 L133.2 10.5 L133.7 13 L134.2 14.4 L134.8 15.9 L135.3 17.1 L135.8 16.4 L136.3 14.7 L136.8 12.8 L137.4 10.2 L137.9 8.4 L138.4 5.5 L138.9 4.8 L139.4 3.9 L140 3.3 L140.5 3.6 L141 5.4 L141.5 6.5 L142 6.8 L142.6 6.8 L143.1 5.6 L143.6 5.3 L144.1 4.7 L144.7 5.7 L145.2 6.6 L145.7 8.3 L146.2 11.1 L146.7 13.4 L147.3 15.2 L147.8 16.4 L148.3 17.2 L148.8 17.5 L149.3 16.2 L149.9 13.2 L150.4 10.1 L150.9 8.5 L151.4 7.1 L151.9 6.5 L152.5 6 L153 5.7 L153.5 5.8 L154 7.1 L154.5 7.9 L155.1 7.1 L155.6 6.1 L156.1 6 L156.6 5.3 L157.1 3.9 L157.7 4.4 L158.2 5.3 L158.7 7.4 L159.2 10 L159.7 12.2 L160.3 14.9 L160.8 16.8 L161.3 17.1 L161.8 17.3 L162.3 16 L162.9 14.3 L163.4 12 L163.9 9.6 L164.4 8.5 L164.9 7.3 L165.5 6.8 L166 6.9 L166.5 6.4 L167 6.2 L167.5 6.6 L168.1 6.6 L168.6 5.7 L169.1 4.7 L169.6 2.9 L170.1 2.9 L170.7 2.6 L171.2 4 L171.7 6.1 L172.2 9.3 L172.7 11.8 L173.3 14.5 L173.8 16.4 L174.3 17.3 L174.8 16.9 L175.3 15 L175.9 12.7 L176.4 11.3 L176.9 10.3 L177.4 9.7 L178 8.1 L178.5 7.1 L179 7.9 L179.5 7.6 L180 7.3 L180.6 6.6 L181.1 6.8 L181.6 5.9 L182.1 4 L182.6 3.4 L183.2 2.9 L183.7 2.5 L184.2 3.4 L184.7 5.1 L185.2 7 L185.8 10.1 L186.3 12.8 L186.8 14.9 L187.3 16.4 L187.8 15.4 L188.4 14.7 L188.9 13.8 L189.4 12.5 L189.9 11.4 L190.4 9.6 L191 9 L191.5 9.6 L192 9.1 L192.5 9.7 L193 10.3 L193.6 8.8 L194.1 7.8 L194.6 5.4 L195.1 4.5 L195.6 3.1 L196.2 1.6 L196.7 0.8 L197.2 2.3 L197.7 4.7 L198.2 6.3 L198.8 9.2 L199.3 12.1 L199.8 14.2 L200.3 14.7 L200.8 14.1 L201.4 14.2 L201.9 12.9 L202.4 11.8 L202.9 10.4 L203.4 10.8 L204 11.3 L204.5 10.7 L205 11.3 L205.5 11.8 L206 11.6 L206.6 10.3 L207.1 9.3 L207.6 6.4 L208.1 3.7 L208.7 2.6 L209.2 1.1 L209.7 0.6 L210.2 0.7 L210.7 2.9 L211.3 5.7 L211.8 8.1 L212.3 11 L212.8 13.2 L213.3 13.6 L213.9 13.5 L214.4 13.5 L214.9 12.4 L215.4 11.4 L215.9 11.8 L216.5 11 L217 11.2 L217.5 11.2 L218 11.4 L218.5 12.8 L219.1 11.7 L219.6 10.4 L220.1 8 L220.6 5.3 L221.1 4.1 L221.7 2 L222.2 0.3 L222.7 0.4 L223.2 1.4 L223.7 2.3 L224.3 4.7 L224.8 6.5 L225.3 8.7 L225.8 9.7 L226.3 10.6 L226.9 10.6 L227.4 10.7 L227.9 9.7 L228.4 10.2 L228.9 10.7 L229.5 12 L230 12.4 L230.5 13.9 L231 14 L231.5 14.6 L232.1 13.6 L232.6 11.7 L233.1 9.6 L233.6 7.3 L234.1 4.3 L234.7 2.5 L235.2 1.6 L235.7 1.1 L236.2 1.4 L236.7 2.9 L237.3 5 L237.8 6.8 L238.3 8.3 L238.8 10.3 L239.3 10 L239.9 10.3 L240.4 9.8 L240.9 8.9 L241.4 8.5 L242 9.8 L242.5 10.9 L243 12.8 L243.5 14.7 L244 15.5 L244.6 16.3 L245.1 15 L245.6 13.3 L246.1 11.6 L246.6 8.3 L247.2 6.2 L247.7 4.6 L248.2 2.8 L248.7 1.8 L249.2 1.5 L249.8 2.2 L250.3 4.1 L250.8 6.3 L251.3 7.1 L251.8 7.4 L252.4 8.7 L252.9 8.1 L253.4 7.3 L253.9 7.5 L254.4 7.6 L255 8.9 L255.5 11.3 L256 12.2 L256.5 13.3 L257 14.7 L257.6 14.7 L258.1 15.5 L258.6 13.7 L259.1 10.9 L259.6 9.2 L260.2 7 L260.7 5.3 L261.2 4.3 L261.7 2.6 L262.2 3.2 L262.8 4.5 L263.3 4.8 L263.8 6.7 L264.3 7.5 L264.8 7 L265.4 6.5 L265.9 7.3 L266.4 6.3 L266.9 7.2 L267.4 7 L268 7.6 L268.5 9 L269 10.9 L269.5 13.5 L270 15.6 L270.6 16.3 L271.1 16.9 L271.6 14.8 L272.1 13.2 L272.7 11 L273.2 8.2 L273.7 5.7 L274.2 5.1 L274.7 4.8 L275.3 5.2 L275.8 5.8 L276.3 6.1 L276.8 6.2 L277.3 6 L277.9 5.8 L278.4 5.7 L278.9 5.2 L279.4 5.6 L279.9 5.6 L280.5 6.2 L281 7.8 L281.5 9.4 L282 11.5 L282.5 12.9 L283.1 14.2 L283.6 15.3 L284.1 15.2 L284.6 14.5 L285.1 13.2 L285.7 11 L286.2 9.3 L286.7 8 L287.2 7 L287.7 5.7 L288.3 5.3 L288.8 5.5 L289.3 6.8 L289.8 7.6 L290.3 8 L290.9 8 L291.4 7.3 L291.9 6.9 L292.4 6.7 L292.9 6.2 L293.5 6.5 L294 8 L294.5 9 L295 10.4 L295.5 11.6 L296.1 13.1 L296.6 13.3 L297.1 13.6 L297.6 13.2 L298.1 11.6 L298.7 10.4 L299.2 9.6 L299.7 9 L300.2 8 L300.7 7.6 L301.3 7.8 L301.8 7.8 L302.3 8.2 L302.8 8.2 L303.3 8.2 L303.9 7.7 L304.4 7.4 L304.9 7.2 L305.4 6.8 L306 6.6 L306.5 6.8 L307 7.4 L307.5 8.2 L308 9 L308.6 10 L309.1 10.4 L309.6 10.9 L310.1 10.8 L310.6 10.5 L311.2 10 L311.7 9.6 L312.2 9 L312.7 8.9 L313.2 8.7 L313.8 8.7 L314.3 8.8 L314.8 8.8 L315.3 8.9 L315.8 8.8 L316.4 8.7 L316.9 8.7 L317.4 8.5 L317.9 8.5 L318.4 8.6 L319 8.6 L319.5 8.7 L320 8.8" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              vector-effect="non-scaling-stroke"/>
+      </svg>
+      <p class="banda__nota">Associado ao estado de alerta e à atenção.</p>
+    </div></div>
+    <figcaption>
+      O eletroencefalograma separa a atividade elétrica do cérebro em faixas de
+      frequência. A leitura dessas faixas, em conjunto com o contexto clínico,
+      é o que o médico interpreta no laudo.
+    </figcaption>
+  </figure></div>
+    </div>
+    </div>
+  </section>
+<section class="secao secao--grafite">
+    <div class="wrap wrap--normal">
+      
+      <div class="contraste">
+      <div class="contraste__col">
+        <p class="eyebrow">O EEG é</p>
+        <ul class="pontos pontos--positivo">
+    <li>Um registro da atividade elétrica espontânea do cérebro ao longo do tempo.</li>
+<li>Um exame funcional: mostra como o cérebro está funcionando naquele período de registro.</li>
+<li>Um apoio ao raciocínio clínico do médico que solicitou o exame.</li>
+  </ul>
+      </div>
+      <div class="contraste__col">
+        <p class="eyebrow">O EEG não é</p>
+        <ul class="pontos pontos--negativo">
+    <li>Não é um exame de imagem: não mostra a anatomia do cérebro, como fazem a tomografia e a ressonância.</li>
+<li>Não mede inteligência, personalidade, emoções nem pensamentos.</li>
+<li>Não aplica corrente elétrica no paciente em nenhum momento.</li>
+<li>Um traçado sem alterações não exclui, por si só, todos os diagnósticos; e uma alteração isolada não fecha diagnóstico sem o contexto clínico.</li>
+  </ul>
+      </div>
+    </div>
+    </div>
+  </section>
+<section id="como-funciona" class="secao ">
+    <div class="wrap wrap--normal">
+      <p class="eyebrow">Passo a passo</p>
+<h2 class="secao__titulo">Como o exame funciona</h2>
+<p class="secao__intro">Da recepção ao laudo, o eletroencefalograma segue uma sequência previsível. Saber o que esperar em cada etapa é o que mais reduz a ansiedade no dia.</p>
+      <ol class="passos">
+    <li class="passo">
+        <span class="passo__num" aria-hidden="true">01</span>
+        <h3 class="passo__titulo">Recepção e checagem</h3>
+        <p class="passo__texto">Conferimos o pedido médico e as informações clínicas relevantes, como medicações em uso, episódios que motivaram a investigação e exames anteriores. Essas informações fazem parte da interpretação do traçado.</p>
+      </li>
+<li class="passo">
+        <span class="passo__num" aria-hidden="true">02</span>
+        <h3 class="passo__titulo">Medição da cabeça</h3>
+        <p class="passo__texto">A cabeça é medida com fita métrica para marcar os pontos do sistema 10–20, o padrão internacional que distribui os eletrodos em proporção à anatomia de cada pessoa. É isso que torna os registros comparáveis entre exames.</p>
+      </li>
+<li class="passo">
+        <span class="passo__num" aria-hidden="true">03</span>
+        <h3 class="passo__titulo">Colocação dos eletrodos</h3>
+        <p class="passo__texto">Os eletrodos são fixados no couro cabeludo com uma pasta condutora solúvel em água. Eles apenas captam sinais: nenhuma corrente elétrica é aplicada em você durante o exame.</p>
+      </li>
+<li class="passo">
+        <span class="passo__num" aria-hidden="true">04</span>
+        <h3 class="passo__titulo">Registro em repouso</h3>
+        <p class="passo__texto">Você fica deitado ou sentado, confortável e relaxado, com os olhos fechados na maior parte do tempo. O técnico pede para abrir e fechar os olhos em alguns momentos, porque essa alternância modifica o traçado de forma esperada.</p>
+      </li>
+<li class="passo">
+        <span class="passo__num" aria-hidden="true">05</span>
+        <h3 class="passo__titulo">Manobras de ativação</h3>
+        <p class="passo__texto">Conforme o protocolo solicitado, podem ser feitas manobras que ajudam a evidenciar alterações: respiração profunda por alguns minutos, estímulo luminoso intermitente e, em alguns casos, registro durante o sono.</p>
+      </li>
+<li class="passo">
+        <span class="passo__num" aria-hidden="true">06</span>
+        <h3 class="passo__titulo">Retirada e laudo</h3>
+        <p class="passo__texto">Os eletrodos são retirados e a pasta sai com água. O traçado é então analisado e laudado por médico, que o interpreta sempre em conjunto com o quadro clínico e com o motivo do pedido.</p>
+      </li>
+  </ol>
+<div class="nota-destaque">
+        <h3 class="nota-destaque__titulo">Quanto tempo leva</h3>
+        <p>O registro de um eletroencefalograma de rotina costuma levar de 20 a 40 minutos. Somando o preparo, a medição da cabeça, a colocação dos eletrodos e a retirada, reserve mais tempo do que a duração do registro. Protocolos específicos, como os que incluem registro durante o sono, são mais longos, e o tempo é definido pelo pedido médico.</p>
+      </div>
+<p class="secao__acao"><a class="btn btn--texto" href="/como-funciona-o-exame/">Ver cada etapa em detalhe</a></p>
+    </div>
+  </section>
+<section id="preparo" class="secao secao--claro">
+    <div class="wrap wrap--normal">
+      <p class="eyebrow">Antes do exame</p>
+<h2 class="secao__titulo">Orientações gerais de preparo</h2>
+<p class="secao__intro">Estas são orientações gerais. O preparo definitivo é o que consta no seu pedido médico e na confirmação do agendamento.</p>
+      <div class="cartoes">
+    <article class="cartao">
+        <h3 class="cartao__titulo">Cabelo limpo e seco</h3>
+        <p class="cartao__texto">Lave o cabelo na véspera ou no dia do exame apenas com xampu e enxágue bem. Venha com o cabelo seco e sem condicionador, creme, óleo, gel, pomada, spray ou laquê: esses produtos formam uma película que prejudica o contato dos eletrodos e pode comprometer a qualidade do traçado.</p>
+      </article>
+<article class="cartao">
+        <h3 class="cartao__titulo">Não suspenda medicações</h3>
+        <p class="cartao__texto">Continue tomando todos os seus medicamentos nos horários habituais, inclusive anticonvulsivantes, a menos que o médico que pediu o exame tenha orientado o contrário por escrito. Suspender medicação por conta própria é perigoso e pode alterar o resultado.</p>
+      </article>
+<article class="cartao">
+        <h3 class="cartao__titulo">Alimentação normal</h3>
+        <p class="cartao__texto">Não é necessário jejum. Faça uma refeição leve antes do exame: ficar muitas horas sem comer pode baixar a glicemia e alterar o traçado. Evite café, chá preto, chá verde, refrigerantes à base de cola, energéticos e chocolate nas horas anteriores, porque a cafeína interfere no registro.</p>
+      </article>
+<article class="cartao">
+        <h3 class="cartao__titulo">Sono conforme o pedido médico</h3>
+        <p class="cartao__texto">Alguns protocolos pedem privação parcial de sono ou registro durante o sono — e, nesse caso, a instrução vem do médico e é confirmada no agendamento. Sem essa indicação expressa, durma normalmente. Nunca faça privação de sono por iniciativa própria.</p>
+      </article>
+<article class="cartao">
+        <h3 class="cartao__titulo">Roupas e conforto</h3>
+        <p class="cartao__texto">Prefira roupa confortável e uma blusa de abertura frontal, que facilite tirar sem passar pela cabeça ao final do exame. Vale trazer touca, boné ou lenço para usar na saída, já que o cabelo fica com resíduo de pasta condutora.</p>
+      </article>
+  </div>
+<div class="nota-destaque nota-destaque--atencao">
+        <h3 class="nota-destaque__titulo">Nunca suspenda medicação por conta própria</h3>
+        <p>
+          Continue tomando todos os seus medicamentos nos horários habituais,
+          inclusive anticonvulsivantes, a menos que o médico que pediu o exame
+          tenha orientado o contrário por escrito.
+        </p>
+      </div>
+<div class="lista-com-titulo">
+        <h3 class="lista-com-titulo__titulo">O que trazer no dia</h3>
+        <ul class="pontos ">
+    <li>Pedido médico do eletroencefalograma.</li>
+<li>Documento de identificação com foto.</li>
+<li>Lista dos medicamentos em uso, com doses e horários.</li>
+<li>Laudos e exames anteriores relacionados, se houver — inclusive eletroencefalogramas prévios.</li>
+<li>Relato objetivo dos episódios que motivaram o exame: como começam, quanto duram e com que frequência acontecem.</li>
+  </ul>
+      </div>
+<p class="secao__acao"><a class="btn btn--texto" href="/preparo-para-eletroencefalograma/">Ver o preparo completo</a></p>
+    </div>
+  </section>
+<section class="secao ">
+    <div class="wrap wrap--normal">
+      <p class="eyebrow">Tranquilidade</p>
+<h2 class="secao__titulo">O que você precisa saber antes de vir</h2>
+      <div class="cartoes">
+    <article class="cartao">
+        <h3 class="cartao__titulo">Não dói</h3>
+        <p class="cartao__texto">Os eletrodos são apoiados sobre a pele com pasta condutora. Não há agulhas, cortes nem choque.</p>
+      </article>
+<article class="cartao">
+        <h3 class="cartao__titulo">Não usa radiação</h3>
+        <p class="cartao__texto">O EEG apenas registra a atividade elétrica que o próprio cérebro produz. Não há contraste nem radiação ionizante.</p>
+      </article>
+<article class="cartao">
+        <h3 class="cartao__titulo">Não invasivo</h3>
+        <p class="cartao__texto">Todo o registro é feito na superfície do couro cabeludo, por fora, sem nenhum procedimento invasivo.</p>
+      </article>
+<article class="cartao">
+        <h3 class="cartao__titulo">Para todas as idades</h3>
+        <p class="cartao__texto">O exame pode ser realizado de crianças a idosos, com o protocolo e o acompanhamento ajustados a cada caso.</p>
+      </article>
+  </div>
+    </div>
+  </section>
+<section id="atendimento" class="secao secao--areia">
+    <div class="wrap wrap--normal">
+      <p class="eyebrow">Atendimento</p>
+<h2 class="secao__titulo">Informações sobre o atendimento</h2>
+      <div class="infos"><div class="info">
+      <h3 class="info__titulo">Onde</h3>
+      <p>Rio de Janeiro — RJ</p>
+      <p class="info__nota">O endereço da unidade de atendimento é
+             informado na confirmação do agendamento.</p>
+      
+    </div>
+<div class="info">
+      <h3 class="info__titulo">Quando</h3>
+      
+      <p class="info__nota">
+        O atendimento é feito mediante agendamento prévio. A disponibilidade de
+        horários é confirmada pelo WhatsApp.
+      </p>
+    </div>
+<div class="info">
+      <h3 class="info__titulo">O que é necessário</h3>
+      <p>Pedido médico do eletroencefalograma e documento de identificação com foto.</p>
+      <p class="info__nota">
+        O pedido médico define o protocolo do exame e, com ele, o preparo e a
+        duração.
+      </p>
+    </div></div>
+      <p class="secao__acao"><a class="btn btn--texto" href="/contato/">Contato e agendamento</a></p>
+    </div>
+  </section>
+<section id="duvidas" class="secao ">
+    <div class="wrap wrap--normal">
+      <p class="eyebrow">Dúvidas frequentes</p>
+<h2 class="secao__titulo">As perguntas que mais recebemos</h2>
+      <div class="faq">
+    <details class="faq__item" id="faq-o-eletroencefalograma-doi-ou-da-choque">
+        <summary class="faq__pergunta">
+          <h3 class="faq__titulo">O eletroencefalograma dói ou dá choque?</h3>
+          <span class="faq__sinal" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__resposta"><p>Não. O eletroencefalograma é indolor e não aplica nenhuma corrente elétrica no paciente. Os eletrodos funcionam como microfones muito sensíveis: eles apenas captam a atividade elétrica que o próprio cérebro já produz.</p>
+<p>A sensação é de ter pequenos discos apoiados no couro cabeludo com uma pasta fria. Não há agulhas, cortes nem radiação.</p></div>
+      </details>
+<details class="faq__item" id="faq-quanto-tempo-dura-o-exame">
+        <summary class="faq__pergunta">
+          <h3 class="faq__titulo">Quanto tempo dura o exame?</h3>
+          <span class="faq__sinal" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__resposta"><p>O registro de um eletroencefalograma de rotina costuma levar de 20 a 40 minutos. Como ainda é preciso medir a cabeça, posicionar os eletrodos e retirá-los no fim, reserve um tempo maior do que a duração do registro em si.</p>
+<p>Protocolos específicos, como os que incluem registro durante o sono, levam mais tempo. A duração do seu exame segue o que foi solicitado no pedido médico.</p></div>
+      </details>
+<details class="faq__item" id="faq-preciso-de-pedido-medico-para-fazer-o-eeg">
+        <summary class="faq__pergunta">
+          <h3 class="faq__titulo">Preciso de pedido médico para fazer o EEG?</h3>
+          <span class="faq__sinal" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__resposta"><p>Sim. O eletroencefalograma é um exame complementar e é realizado mediante indicação médica. O pedido traz o protocolo a ser seguido e o motivo clínico da investigação, informações que o médico usa depois para interpretar o traçado.</p></div>
+      </details>
+<details class="faq__item" id="faq-preciso-ficar-em-jejum">
+        <summary class="faq__pergunta">
+          <h3 class="faq__titulo">Preciso ficar em jejum?</h3>
+          <span class="faq__sinal" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__resposta"><p>Não é necessário jejum — e ficar muitas horas sem comer pode até alterar o traçado. Faça uma refeição leve antes do exame.</p>
+<p>O que se pede é evitar cafeína nas horas anteriores: café, chá preto, chá verde, refrigerantes à base de cola, energéticos e chocolate interferem no registro.</p></div>
+      </details>
+<details class="faq__item" id="faq-posso-tomar-meus-medicamentos-no-dia-do-exame">
+        <summary class="faq__pergunta">
+          <h3 class="faq__titulo">Posso tomar meus medicamentos no dia do exame?</h3>
+          <span class="faq__sinal" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__resposta"><p>Sim. Continue tomando todos os seus medicamentos nos horários habituais, inclusive anticonvulsivantes, a menos que o médico que solicitou o exame tenha orientado o contrário por escrito.</p>
+<p>Não suspenda nenhuma medicação por conta própria: além do risco para a sua saúde, isso pode comprometer a leitura do exame. Leve a lista do que você usa, com doses e horários.</p></div>
+      </details>
+<details class="faq__item" id="faq-como-devo-lavar-o-cabelo-antes-do-eletroencefalograma">
+        <summary class="faq__pergunta">
+          <h3 class="faq__titulo">Como devo lavar o cabelo antes do eletroencefalograma?</h3>
+          <span class="faq__sinal" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__resposta"><p>Lave o cabelo na véspera ou no dia do exame usando apenas xampu, enxágue bem e venha com o cabelo seco.</p>
+<p>Não use condicionador, creme de pentear, óleo, gel, pomada, spray nem laquê. Esses produtos deixam uma película no couro cabeludo que atrapalha o contato dos eletrodos e pode prejudicar a qualidade do traçado.</p></div>
+      </details>
+<details class="faq__item" id="faq-criancas-podem-fazer-eletroencefalograma">
+        <summary class="faq__pergunta">
+          <h3 class="faq__titulo">Crianças podem fazer eletroencefalograma?</h3>
+          <span class="faq__sinal" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__resposta"><p>Sim. O exame é frequente na faixa pediátrica e é igualmente indolor. Um acompanhante adulto permanece com a criança durante todo o registro.</p>
+<p>O que ajuda mais é explicar antes, com palavras simples: vão colar &quot;adesivinhos&quot; na cabeça para ouvir como o cérebro conversa, não dói e não dá choque. Levar o brinquedo ou a mantinha preferida também costuma acalmar.</p></div>
+      </details>
+<details class="faq__item" id="faq-como-faco-para-agendar">
+        <summary class="faq__pergunta">
+          <h3 class="faq__titulo">Como faço para agendar?</h3>
+          <span class="faq__sinal" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__resposta"><p>O atendimento é feito mediante agendamento. Fale com a nossa equipe pelo WhatsApp para verificar a disponibilidade, confirmar o preparo adequado ao seu pedido médico e tirar dúvidas sobre o exame.</p>
+<p>Tenha o pedido médico em mãos ao entrar em contato: é ele que define o protocolo e, portanto, o tempo e o preparo do seu exame.</p></div>
+      </details>
+  </div>
+<p class="secao__acao"><a class="btn btn--texto" href="/perguntas-frequentes/">Ver todas as perguntas</a></p>
+    </div>
+  </section>
+<section id="contato" class="secao secao--chamada">
+    <div class="wrap wrap--estreito">
+      <div class="chamada">
+        <div class="filete" aria-hidden="true">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none"
+           aria-hidden="true" focusable="false">
+      <path d="M0 11 L4.6 11 L9.2 10.9 L13.8 10.7 L18.5 10.5 L23.1 10.4 L27.7 10.3 L32.3 10 L36.9 9.9 L41.5 10 L46.2 10.2 L50.8 10.7 L55.4 11.5 L60 12.4 L64.6 13.4 L69.2 14.1 L73.8 14.8 L78.5 15 L83.1 15.6 L87.7 15.8 L92.3 15.8 L96.9 15.8 L101.5 15.6 L106.2 15.5 L110.8 15.6 L115.4 15.1 L120 15.2 L124.6 15.4 L129.2 15.6 L133.8 16 L138.5 16.4 L143.1 16 L147.7 15.8 L152.3 14.8 L156.9 13.9 L161.5 12.7 L166.2 11.7 L170.8 11.1 L175.4 11.1 L180 11.2 L184.6 11.4 L189.2 12.6 L193.8 13 L198.5 14.5 L203.1 15 L207.7 16 L212.3 16.2 L216.9 16.6 L221.5 16.3 L226.2 15.7 L230.8 14.3 L235.4 12.6 L240 11.3 L244.6 10.1 L249.2 8.9 L253.8 8.3 L258.5 7.4 L263.1 7.2 L267.7 7.2 L272.3 7.3 L276.9 7.2 L281.5 6.8 L286.2 6.3 L290.8 5.4 L295.4 4.8 L300 4.1 L304.6 3.4 L309.2 3 L313.8 2.7 L318.5 2.7 L323.1 3.1 L327.7 4.2 L332.3 5.4 L336.9 7.3 L341.5 9 L346.2 10.6 L350.8 11.4 L355.4 12 L360 12 L364.6 11.8 L369.2 11.2 L373.8 9.9 L378.5 9.3 L383.1 8.2 L387.7 6.9 L392.3 6.2 L396.9 6.1 L401.5 6.2 L406.2 7 L410.8 7.3 L415.4 8.2 L420 8.4 L424.6 9.4 L429.2 10.4 L433.8 10.2 L438.5 10.6 L443.1 11 L447.7 10.8 L452.3 11.3 L456.9 11.1 L461.5 11.7 L466.2 13.1 L470.8 14.1 L475.4 15.7 L480 17.6 L484.6 19.1 L489.2 20.4 L493.8 21.2 L498.5 20.8 L503.1 20.1 L507.7 19.8 L512.3 18.7 L516.9 16.8 L521.5 15.6 L526.2 14.1 L530.8 13.2 L535.4 12.7 L540 12.8 L544.6 13.3 L549.2 13.8 L553.8 14.3 L558.5 14.6 L563.1 14.5 L567.7 14.3 L572.3 14 L576.9 14.3 L581.5 14.1 L586.2 13.1 L590.8 12.8 L595.4 12.3 L600 12.2 L604.6 12.9 L609.2 12.6 L613.8 13.6 L618.5 14.3 L623.1 14.6 L627.7 15.5 L632.3 15.3 L636.9 14.6 L641.5 13.7 L646.2 12.9 L650.8 11.7 L655.4 9.9 L660 7.6 L664.6 5.9 L669.2 5.1 L673.8 4 L678.5 3.8 L683.1 3.6 L687.7 3.2 L692.3 3.8 L696.9 4.3 L701.5 5.1 L706.2 5.4 L710.8 5.9 L715.4 5.6 L720 5.2 L724.6 4.9 L729.2 4.9 L733.8 5.2 L738.5 5.5 L743.1 5.8 L747.7 6.3 L752.3 6.7 L756.9 7.6 L761.5 8.7 L766.2 9.7 L770.8 10.9 L775.4 11.1 L780 11.5 L784.6 10.8 L789.2 10.3 L793.8 9.6 L798.5 8.1 L803.1 6.6 L807.7 5.8 L812.3 5.4 L816.9 5.3 L821.5 5.4 L826.2 6.4 L830.8 7.6 L835.4 8.9 L840 10.7 L844.6 11.5 L849.2 13 L853.8 13.4 L858.5 14.5 L863.1 15.2 L867.7 15.5 L872.3 15.4 L876.9 15.6 L881.5 15.5 L886.2 16.1 L890.8 16.6 L895.4 16.8 L900 17.5 L904.6 18.2 L909.2 19.2 L913.8 19.9 L918.5 19.7 L923.1 18.6 L927.7 18.1 L932.3 17.3 L936.9 16 L941.5 14.6 L946.2 12.8 L950.8 12.2 L955.4 10.9 L960 11.2 L964.6 11.7 L969.2 11.6 L973.8 12.4 L978.5 13.6 L983.1 14.2 L987.7 14.5 L992.3 15.4 L996.9 15.2 L1001.5 15.3 L1006.2 14.6 L1010.8 13.9 L1015.4 12.7 L1020 12.7 L1024.6 12.5 L1029.2 12.1 L1033.8 11.4 L1038.5 11.3 L1043.1 11.3 L1047.7 11.4 L1052.3 11 L1056.9 10.5 L1061.5 10.1 L1066.2 8.9 L1070.8 7.9 L1075.4 7.2 L1080 6.4 L1084.6 5.8 L1089.2 5.4 L1093.8 4.9 L1098.5 5.1 L1103.1 5.3 L1107.7 5.8 L1112.3 6.5 L1116.9 7.4 L1121.5 8.5 L1126.2 9.1 L1130.8 9.8 L1135.4 10 L1140 10.2 L1144.6 10.2 L1149.2 10.2 L1153.8 10.2 L1158.5 10.3 L1163.1 10.3 L1167.7 10.3 L1172.3 10.4 L1176.9 10.5 L1181.5 10.7 L1186.2 10.8 L1190.8 10.9 L1195.4 11 L1200 11" fill="none" stroke="currentColor" stroke-width="1.25"
+        stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </div>
+        <h2 class="chamada__titulo">Agende seu eletroencefalograma</h2>
+        <p class="chamada__texto">Atendimento mediante agendamento. Fale com a nossa equipe pelo WhatsApp para verificar a disponibilidade e tirar dúvidas sobre o exame.</p>
+        <div class="chamada__acoes"><a class="btn btn--destaque" href="https://wa.me/5521998901775?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20disponibilidade%20para%20agendar%20um%20eletroencefalograma%20(EEG)%20com%20a%20EEGLife."
+     target="_blank" rel="noopener noreferrer"
+     data-eeg-cta="agendamento">
+    <svg class="btn__icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.09c-.25.69-1.44 1.32-1.98 1.37-.54.05-1.04.21-3.54-.88-2.96-1.29-4.83-4.4-4.98-4.6-.14-.2-1.18-1.62-1.18-3.09 0-1.47.76-2.19 1.03-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.59.84 2.05.91 2.2.07.15.12.32.02.52-.1.2-.2.32-.39.54-.2.22-.31.3-.44.52-.13.22-.02.45.1.65.12.2.65 1.06 1.4 1.72.96.85 1.75 1.11 1.98 1.23.22.12.45.1.62-.07.17-.17.69-.8.88-1.08.19-.27.37-.22.62-.12.25.1 1.6.75 1.87.89.27.14.45.2.52.32.07.12.07.71-.18 1.4Z"/>
+    </svg>
+    <span>Agendar pelo WhatsApp</span>
+  </a></div>
+        
+        <p class="chamada__nota">As informações deste site são educativas e não
+        substituem a avaliação de um médico.</p>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer class="rodape">
+  <div class="wrap">
+    <div class="rodape__topo">
+      <div class="rodape__marca">
+        
+<span class="logo logo--compacto">
+  <svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+    <circle cx="32" cy="32" r="31" class="logo__disco"/>
+    <circle cx="32" cy="32" r="25.5" class="logo__anel"/>
+    <path class="logo__tracado"
+          d="M8 32h5.4l2.9-5.2 3.1 9.1 2.9-6.1 2.4 2.1L30 12.4 34.4 50l3.5-19.6 2.6 3.4 2.9-5.3 3 6.1 2.2-2.6H56"
+          fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span class="logo__texto">
+    <span class="logo__nome">EEG<em>Life</em></span>
+    <span class="logo__sub">Neurodiagnósticos</span>
+  </span>
+</span>
+        <p class="rodape__tagline">Eletroencefalograma e neurodiagnósticos no Rio de Janeiro.</p>
+      </div>
+      <nav class="rodape__col" aria-label="Contato">
+        <h2 class="rodape__titulo">Contato</h2>
+        <ul><li><a href="https://wa.me/5521998901775?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20EEGLife%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20eletroencefalograma." target="_blank" rel="noopener noreferrer"
+         data-eeg-cta="rodape">WhatsApp (21) 99890-1775</a></li></ul>
+      </nav>
+      <nav class="rodape__col" aria-label="Páginas">
+        <h2 class="rodape__titulo">Navegação</h2>
+        <ul><li><a href="/eletroencefalograma/">Eletroencefalograma (EEG)</a></li>
+<li><a href="/como-funciona-o-exame/">Como funciona o exame</a></li>
+<li><a href="/preparo-para-eletroencefalograma/">Preparo para o exame</a></li>
+<li><a href="/perguntas-frequentes/">Perguntas frequentes</a></li>
+<li><a href="/sobre/">A EEGLife</a></li>
+<li><a href="/contato/">Contato e agendamento</a></li></ul>
+      </nav>
+      <nav class="rodape__col" aria-label="Institucional">
+        <h2 class="rodape__titulo">Institucional</h2>
+        <ul>
+          <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+          <li><a href="/sobre/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="rodape__base">
+      <p class="rodape__operadora">
+      EEGLife é uma marca de
+      <strong>Sopro Life Diagnósticos e Soluções em Saúde LTDA</strong>.
+    </p>
+<p class="rodape__link-operadora">
+          <a class="link-externo" href="https://soprolife.com.br" target="_blank" rel="noopener noreferrer">SoproLife Diagnósticos Complementares</a>
+        </p>
+      <p class="rodape__aviso">
+        O conteúdo deste site tem caráter informativo e educativo e não
+        substitui a consulta, o diagnóstico ou o tratamento por um profissional
+        de saúde habilitado. O eletroencefalograma é realizado mediante
+        indicação médica.
+      </p>
+      <p class="rodape__copy">© 2026 Sopro Life Diagnósticos e Soluções em Saúde LTDA. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+  <div class="barra-contato">
+    <p class="barra-contato__texto">Agendamento de EEG</p>
+    <a class="barra-contato__acao" href="https://wa.me/5521998901775?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20disponibilidade%20para%20agendar%20um%20eletroencefalograma%20(EEG)%20com%20a%20EEGLife." target="_blank"
+       rel="noopener noreferrer" data-eeg-cta="barra">WhatsApp</a>
+  </div>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

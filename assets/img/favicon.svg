@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EEGLife">
+  <title>EEGLife</title>
+  <!-- Variante simplificada da marca para favicon: sem anel interno e com
+       traçado mais espesso, para continuar legível a 16 px. -->
+  <rect width="64" height="64" rx="14" fill="#222C34"/>
+  <path d="M9 32h6.5l3.2-7 3.4 12 3-8L30 14l4.6 36 3.6-21 3 5 3-7 3.3 8H55"
+        fill="none" stroke="#D9AD61" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
