@@ -1,9 +1,6 @@
-# EEGLife — PRÉ-LANÇAMENTO
-#
-# O site ainda não deve ser indexado. Este arquivo é gerado a partir de
-# site.config.json: para liberar a indexação no lançamento, troque
-# "publicacao.indexavel" para true e rode "npm run build".
-# Ver LANCAMENTO.md.
+# EEGLife — eeglife.com.br
 
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://eeglife.com.br/sitemap.xml
