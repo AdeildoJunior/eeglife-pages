@@ -1299,6 +1299,162 @@ ol {
   outline-offset: 4px;
 }
 
+/* Cartões de modalidade da página inicial. Mesmo princípio do cartão-link: o
+   título é o link e o ::after dele cobre o cartão; o WhatsApp fica acima
+   (z-index) como segunda ação, sem <a> dentro de <a>. */
+.mod-cards {
+  --mod-gap: clamp(1rem, 2vw, 1.4rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--mod-gap);
+}
+
+/* Flex, e não grid, para que a última linha (são sete cartões) fique
+   centralizada em vez de órfã à esquerda. */
+.mod-cards > .mod-card {
+  flex: 1 1 260px;
+}
+
+@media (min-width: 900px) {
+  .mod-cards > .mod-card {
+    flex: 0 1 calc((100% - 2 * var(--mod-gap)) / 3);
+  }
+}
+
+.mod-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-grande);
+  padding: clamp(1.3rem, 2.6vw, 1.7rem);
+  transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.mod-card:hover {
+  border-color: var(--linha-dourada);
+  box-shadow: var(--sombra);
+  transform: translateY(-2px);
+}
+
+.mod-card__tracado {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 1rem;
+  color: var(--dourado);
+  opacity: 0.85;
+}
+
+.mod-card__tempo {
+  align-self: flex-start;
+  margin: 0 0 0.7rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--dourado-tinta);
+  background: var(--superficie-funda);
+  border: 1px solid var(--linha-dourada);
+  border-radius: 999px;
+}
+
+.mod-card__titulo {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin-bottom: 0.55rem;
+}
+
+.mod-card__titulo a {
+  color: var(--tinta);
+  text-decoration: none;
+}
+
+.mod-card__titulo a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.mod-card:hover .mod-card__titulo a {
+  color: var(--dourado-tinta);
+}
+
+.mod-card__titulo a:focus-visible {
+  outline: none;
+}
+
+.mod-card:has(.mod-card__titulo a:focus-visible) {
+  outline: 2px solid var(--dourado);
+  outline-offset: 3px;
+}
+
+.mod-card__texto {
+  color: var(--tinta-suave);
+  font-size: 0.9375em;
+  margin: 0 0 0.4rem;
+}
+
+.mod-card__saiba {
+  margin: 0 0 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--dourado-tinta);
+}
+
+.mod-card__saiba::after {
+  content: ' →';
+  white-space: pre;
+}
+
+/* As duas formas de marcar ficam acima do link esticado do cartão. */
+.mod-card__acoes {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.1rem 1rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--linha);
+}
+
+.mod-card__wa,
+.mod-card__agendar {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--dourado-tinta);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.mod-card__wa::after {
+  content: ' ↗';
+  white-space: pre;
+}
+
+.mod-card__agendar {
+  color: var(--tinta-suave);
+}
+
+.mod-card__agendar::after {
+  content: ' ↓';
+  white-space: pre;
+}
+
+.mod-card__agendar:hover {
+  color: var(--dourado-tinta);
+}
+
 .modalidade__titulo a:focus-visible {
   outline: none;
 }
@@ -2186,22 +2342,30 @@ ol {
    que elas acompanham o modo escuro como qualquer outro bloco da identidade.
    Os tons são próprios da EEGLife — areia na terra, grafite esmaecido no mar. */
 
-.unidades {
+/* As cores do mapa valem também no modal, que o script move para o <body>. */
+.unidades,
+.mapa-modal {
   --mapa-mar: #dbe5e8;
   --mapa-terra: #f4eee2;
   --mapa-verde: #e3e8d6;
   --mapa-agua: #cedce1;
   --mapa-costa: rgba(34, 44, 52, 0.2);
   --pino: 30px;
+  /* Escala do zoom e proporção do mapa: o script e o HTML sobrescrevem no
+     quadro; estes são os valores de partida. */
+  --z: 1;
+  --mapa-razao: 1.38;
+}
 
+.unidades {
   display: grid;
   gap: clamp(1.6rem, 3vw, 2.6rem);
-  align-items: start;
   margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 @media (prefers-color-scheme: dark) {
-  .unidades {
+  .unidades,
+  .mapa-modal {
     --mapa-mar: #141d25;
     --mapa-terra: #27323b;
     --mapa-verde: #2b3a34;
@@ -2210,25 +2374,10 @@ ol {
   }
 }
 
-@media (min-width: 900px) {
-  .unidades {
-    grid-template-columns: minmax(0, 1.18fr) minmax(312px, 1fr);
-  }
-}
-
 /* ── O mapa ── */
 
 .mapa {
   margin: 0;
-}
-
-/* No desktop a lista é mais alta que o mapa; deixá-lo preso mantém o ponto
-   visível enquanto se percorre as unidades. O topo desvia do cabeçalho fixo. */
-@media (min-width: 900px) {
-  .mapa {
-    position: sticky;
-    top: 5.75rem;
-  }
 }
 
 .mapa__quadro {
@@ -2240,6 +2389,157 @@ ol {
   border: 1px solid var(--linha);
   border-radius: var(--raio-grande);
   overflow: hidden;
+  cursor: zoom-in;
+  /* O navegador cuida da rolagem; a pinça fica com o mapa. */
+  touch-action: pan-x pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Aproximado, um dedo arrasta o mapa em vez de rolar a página. */
+.mapa__quadro.is-zoom {
+  cursor: grab;
+  touch-action: none;
+}
+
+.mapa__quadro.is-arrastando {
+  cursor: grabbing;
+}
+
+/* A camada é o que se move: desenho e pinos juntos, para o pino nunca
+   escorregar da coordenada. */
+.mapa__camada {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  transition: transform 0.35s ease;
+}
+
+.mapa__quadro.is-arrastando .mapa__camada {
+  transition: none;
+}
+
+.mapa__controles {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 4;
+  display: grid;
+  gap: 0.35rem;
+  justify-items: end;
+}
+
+.mapa__controles[hidden] {
+  display: none;
+}
+
+.mapa__controle,
+.mapa__ampliar {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--linha-forte);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  cursor: pointer;
+}
+
+.mapa__controle--texto,
+.mapa__ampliar {
+  font-size: 0.8125rem;
+}
+
+.mapa__controle:hover,
+.mapa__ampliar:hover {
+  border-color: var(--dourado);
+  color: var(--dourado-tinta);
+}
+
+.mapa__controle:focus-visible,
+.mapa__ampliar:focus-visible {
+  outline: 2px solid var(--dourado-tinta);
+  outline-offset: 2px;
+}
+
+.mapa__ampliar {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  z-index: 4;
+}
+
+/* Mini-mapa do card de agendamento: travado, como o da SoproLife — o
+   clique em qualquer ponto abre o modal com o mapa grande. */
+.mapa--mini .mapa__quadro,
+.mapa--mini .mapa__quadro.is-zoom {
+  cursor: zoom-in;
+  touch-action: auto;
+}
+
+.mapa--mini .mapa__pino {
+  pointer-events: none;
+}
+
+/* Popup do pino no mapa grande. Fica na camada, preso à coordenada, e
+   desfaz a escala como os pinos: o canto inferior central é a âncora. */
+.mapa__popup {
+  position: absolute;
+  z-index: 5;
+  width: 230px;
+  transform-origin: 50% 100%;
+  translate: -50% calc(-100% - 26px / var(--z, 1));
+  scale: calc(1 / var(--z, 1));
+  padding: 0.75rem 0.85rem 0.55rem;
+  background: var(--superficie);
+  border: 1px solid var(--linha-dourada);
+  border-radius: var(--raio-grande);
+  box-shadow: var(--sombra);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  cursor: auto;
+}
+
+.mapa__popup[hidden] {
+  display: none;
+}
+
+.mapa__popup::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  translate: -50% 0;
+  rotate: 45deg;
+  background: var(--superficie);
+  border-right: 1px solid var(--linha-dourada);
+  border-bottom: 1px solid var(--linha-dourada);
+}
+
+.mapa__popup-titulo {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.mapa__popup p {
+  margin: 0;
+  color: var(--tinta-suave);
+}
+
+.mapa__popup-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
 }
 
 .mapa__base {
@@ -2279,7 +2579,11 @@ ol {
 .mapa__pino {
   position: absolute;
   /* O círculo fica centrado na coordenada; a área de toque é maior que ele. */
-  translate: calc(-50% + var(--pino-x, 0px)) calc(-50% + var(--pino-y, 0px));
+  /* --z é a escala do zoom: o pino a desfaz para manter o tamanho, e o
+     deslocamento das hastes é dividido por ela para seguir em pixels de tela. */
+  translate: calc(-50% + var(--pino-x, 0px) / var(--z, 1))
+    calc(-50% + var(--pino-y, 0px) / var(--z, 1));
+  scale: calc(1 / var(--z, 1));
   width: 44px;
   height: 44px;
   display: grid;
@@ -2389,7 +2693,7 @@ ol {
 
 .unidades__lista {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .unidade {
@@ -2527,50 +2831,87 @@ ol {
   min-height: 1.5em;
 }
 
-/* ── Agenda desativada ── */
+/* ── Agendamento: preferência de exame, local, data e horário ── */
 
-/* Os campos existem, visíveis e bloqueados: a estrutura fica pronta para
-   quando houver agenda, e enquanto isso ninguém escolhe horário nenhum. */
-.agenda {
-  margin-top: clamp(2.2rem, 4vw, 3.2rem);
-  padding: clamp(1.3rem, 3vw, 2rem);
-  background: var(--superficie-funda);
+.agendar {
+  background: var(--superficie);
   border: 1px solid var(--linha);
   border-radius: var(--raio-grande);
+  padding: clamp(1.3rem, 3vw, 1.9rem);
+  box-shadow: var(--sombra);
 }
 
-.agenda__titulo {
-  font-family: var(--sans);
+.secao--claro .agendar {
+  background: var(--fundo);
+}
+
+.agendar__kicker {
+  margin: 0 0 0.35rem;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--dourado-tinta);
-  margin-bottom: 0.8rem;
 }
 
-.agenda__texto {
-  margin: 0;
-  max-width: 62ch;
+.agendar__titulo {
+  font-size: clamp(1.3rem, 2.4vw, 1.55rem);
+  margin-bottom: 0.4rem;
+}
+
+.agendar__sub {
+  margin: 0 0 1.4rem;
+  max-width: 60ch;
   font-size: 0.9375rem;
+  color: var(--tinta-suave);
 }
 
-.agenda__campos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.4rem;
-  margin: 1.2rem 0 0;
+.agendar__grade-principal {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+  align-items: start;
 }
 
-.agenda__campo {
+@media (min-width: 900px) {
+  .agendar__grade-principal {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  }
+
+  .agendar__mapa {
+    position: sticky;
+    top: 5.75rem;
+  }
+}
+
+.agendar__campo--largo {
+  grid-column: 1 / -1;
+}
+
+.agendar__mapa-nota {
+  margin: 0.6rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--tinta-suave);
+}
+
+.agendar__campos {
+  display: grid;
+  gap: 0.9rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+}
+
+.agendar__campo {
   display: grid;
   gap: 0.35rem;
   margin: 0;
   min-width: 0;
-  flex: 1 1 180px;
 }
 
-.agenda__rotulo {
+.agendar__campo[hidden] {
+  display: none;
+}
+
+.agendar__rotulo {
+  padding: 0;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2578,29 +2919,354 @@ ol {
   color: var(--tinta-suave);
 }
 
-.agenda__controle {
+.agendar__controle {
   width: 100%;
   min-width: 0;
+  min-height: 44px;
+  padding: 0.55rem 0.75rem;
   font: inherit;
   font-size: 0.9375rem;
-  padding: 0.6rem 0.75rem;
-  min-height: 44px;
-  background: var(--fundo);
-  border: 1px dashed var(--linha-forte);
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--linha-forte);
   border-radius: var(--raio);
-  /* Cor explícita: o cinza que o navegador aplica a campo desativado não
-     alcança o contraste mínimo exigido pelos testes. */
+  color-scheme: inherit;
+}
+
+.agendar__controle:focus-visible {
+  outline: 2px solid var(--dourado-tinta);
+  outline-offset: 1px;
+  border-color: var(--dourado);
+}
+
+.agendar__horarios {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.agendar__horarios legend {
+  margin-bottom: 0.45rem;
+}
+
+.agendar__grade {
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+}
+
+.agendar__horario {
+  position: relative;
+  display: block;
+}
+
+/* O rádio fica por baixo do rótulo, invisível mas focável: o teclado e o
+   leitor de tela continuam tratando o grupo como uma escolha única. */
+.agendar__horario input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.agendar__horario span {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--linha-forte);
+  border-radius: var(--raio);
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.agendar__horario:hover span {
+  border-color: var(--dourado);
+}
+
+.agendar__horario input:checked + span {
+  background: var(--grafite);
+  border-color: var(--grafite);
+  color: var(--tinta-sobre-escuro);
+}
+
+@media (prefers-color-scheme: dark) {
+  .agendar__horario input:checked + span {
+    background: var(--dourado);
+    border-color: var(--dourado);
+    color: var(--grafite);
+  }
+}
+
+.agendar__horario input:focus-visible + span {
+  outline: 2px solid var(--dourado-tinta);
+  outline-offset: 2px;
+}
+
+/* Data e horário desativados: visíveis e bloqueados. Cores explícitas: o
+   cinza que o navegador aplica a campo desativado não passa no contraste. */
+.agendar__controle:disabled,
+.agendar__horarios:disabled .agendar__horario span {
   color: var(--tinta-suave);
   -webkit-text-fill-color: var(--tinta-suave);
+  background: var(--superficie-funda);
+  border-style: dashed;
   opacity: 1;
   cursor: not-allowed;
 }
 
-.agenda__aviso {
-  margin: 1rem 0 0;
-  max-width: 62ch;
+.agendar__horarios:disabled .agendar__horario input {
+  cursor: not-allowed;
+}
+
+.agendar__horarios:disabled .agendar__horario input:checked + span {
+  background: var(--superficie-funda);
+  border-color: var(--linha-forte);
+  color: var(--tinta-suave);
+}
+
+.agendar__horarios:disabled .agendar__horario:hover span {
+  border-color: var(--linha-forte);
+}
+
+.agendar__nota--aviso {
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--dourado);
+}
+
+.agendar__nota {
+  margin: 1rem 0 1.1rem;
   font-size: 0.8125rem;
   color: var(--tinta-suave);
+}
+
+.agendar__semjs {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--tinta-suave);
+}
+
+/* ── Modal das unidades ──
+   Sem JavaScript é um bloco comum: lista e mapa lado a lado. Com o script
+   (.is-modal), vira o modal da SoproLife: fechado até o mini-mapa abrir. */
+
+.mapa-modal__fundo {
+  display: none;
+}
+
+.mapa-modal__titulo {
+  font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+  margin: 0;
+}
+
+.mapa-modal__topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.mapa-modal__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mapa-modal__botoes[hidden] {
+  display: none;
+}
+
+.mapa-modal__botao {
+  min-height: 44px;
+  padding: 0 1rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--linha-forte);
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+
+.mapa-modal__botao:hover {
+  border-color: var(--dourado);
+  color: var(--dourado-tinta);
+}
+
+.mapa-modal__botao:focus-visible {
+  outline: 2px solid var(--dourado-tinta);
+  outline-offset: 2px;
+}
+
+.mapa-modal__botao--fechar {
+  background: var(--grafite);
+  border-color: var(--grafite);
+  color: var(--tinta-sobre-escuro);
+}
+
+.mapa-modal__botao--fechar:hover {
+  background: var(--grafite-claro);
+  color: var(--tinta-sobre-escuro);
+}
+
+@media (prefers-color-scheme: dark) {
+  .mapa-modal__botao--fechar,
+  .mapa-modal__botao--fechar:hover {
+    background: var(--dourado);
+    border-color: var(--dourado);
+    color: var(--grafite);
+  }
+}
+
+.mapa-modal__corpo {
+  display: grid;
+  gap: clamp(1.2rem, 3vw, 2rem);
+}
+
+@media (min-width: 900px) {
+  .mapa-modal__corpo {
+    grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.3fr);
+    align-items: start;
+  }
+}
+
+.mapa-modal__kicker {
+  margin: 0 0 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dourado-tinta);
+}
+
+.mapa-modal__intro {
+  margin: 0 0 0.9rem;
+  font-size: 0.875rem;
+  color: var(--tinta-suave);
+}
+
+/* Modal de verdade */
+html.mapa-modal-aberto {
+  overflow: hidden;
+}
+
+.mapa-modal.is-modal {
+  display: none;
+}
+
+.mapa-modal.is-modal.is-aberto {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.mapa-modal.is-modal .mapa-modal__fundo {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 44, 52, 0.72);
+}
+
+.mapa-modal.is-modal .mapa-modal__janela {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(1180px, 100%);
+  height: min(780px, calc(100vh - 32px));
+  height: min(780px, calc(100dvh - 32px));
+  padding: clamp(0.9rem, 2vw, 1.3rem);
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-grande);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+}
+
+.mapa-modal.is-modal .mapa-modal__topo {
+  margin-bottom: 0.9rem;
+}
+
+.mapa-modal.is-modal .mapa-modal__corpo {
+  flex: 1;
+  min-height: 0;
+  gap: 1rem;
+  grid-template-rows: minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.mapa-modal.is-modal .mapa-modal__lado {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.25rem;
+}
+
+/* O quadro mantém a proporção do desenho (é o que prende os pinos à
+   coordenada) e fica centrado; a sobra é neutra, como uma moldura. */
+.mapa-modal.is-modal .mapa-modal__mapa {
+  position: relative;
+  min-height: 0;
+  height: 100%;
+  container-type: size;
+  display: grid;
+  place-items: center;
+  background: var(--superficie-funda);
+  border-radius: var(--raio-grande);
+  overflow: hidden;
+}
+
+.mapa-modal.is-modal .mapa--grande .mapa__quadro {
+  width: min(100cqw, 100cqh * var(--mapa-razao));
+}
+
+/* No modal a lista é estreita: o espaço vai para o mapa, como na SoproLife. */
+@media (min-width: 900px) {
+  .mapa-modal.is-modal .mapa-modal__corpo {
+    grid-template-columns: minmax(280px, 330px) minmax(0, 1fr);
+  }
+}
+
+.mapa-modal.is-modal .mapa--grande .mapa__fonte {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  margin: 0;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.6875rem;
+  background: var(--superficie);
+  border-top-left-radius: var(--raio);
+}
+
+@media (max-width: 899px) {
+  .mapa-modal.is-modal.is-aberto {
+    padding: 0;
+  }
+
+  .mapa-modal.is-modal .mapa-modal__janela {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+  }
+
+  /* No celular o mapa vem primeiro e a lista rola por baixo dele. */
+  .mapa-modal.is-modal .mapa-modal__corpo {
+    grid-template-rows: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+
+  .mapa-modal.is-modal .mapa-modal__mapa {
+    order: -1;
+  }
 }
 
 .unidades__aviso {
