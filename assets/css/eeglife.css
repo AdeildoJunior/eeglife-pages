@@ -17,7 +17,8 @@
      12. Página legal
      13. Rodapé
      14. Barra fixa de contato
-     15. Movimento reduzido e impressão
+     15. Unidades, mapa e agenda
+     16. Movimento reduzido e impressão
 
    Convenções de cor (acessibilidade):
      O amarelo queimado (#C48A32) tem contraste 2,7:1 sobre a areia — abaixo do
@@ -2178,7 +2179,438 @@ ol {
   }
 }
 
-/* ───────────── 15. Movimento reduzido e impressão ─────────────────────── */
+/* ──────────────────── 15. Unidades, mapa e agenda ─────────────────────── */
+
+/* O mapa é desenhado pelo próprio site, a partir de src/content/mapa-rio.mjs.
+   Não há tile nem servidor de mapas: as camadas são caminhos SVG, e é por isso
+   que elas acompanham o modo escuro como qualquer outro bloco da identidade.
+   Os tons são próprios da EEGLife — areia na terra, grafite esmaecido no mar. */
+
+.unidades {
+  --mapa-mar: #dbe5e8;
+  --mapa-terra: #f4eee2;
+  --mapa-verde: #e3e8d6;
+  --mapa-agua: #cedce1;
+  --mapa-costa: rgba(34, 44, 52, 0.2);
+  --pino: 30px;
+
+  display: grid;
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+  align-items: start;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  .unidades {
+    --mapa-mar: #141d25;
+    --mapa-terra: #27323b;
+    --mapa-verde: #2b3a34;
+    --mapa-agua: #1b2a33;
+    --mapa-costa: rgba(238, 233, 223, 0.22);
+  }
+}
+
+@media (min-width: 900px) {
+  .unidades {
+    grid-template-columns: minmax(0, 1.18fr) minmax(312px, 1fr);
+  }
+}
+
+/* ── O mapa ── */
+
+.mapa {
+  margin: 0;
+}
+
+/* No desktop a lista é mais alta que o mapa; deixá-lo preso mantém o ponto
+   visível enquanto se percorre as unidades. O topo desvia do cabeçalho fixo. */
+@media (min-width: 900px) {
+  .mapa {
+    position: sticky;
+    top: 5.75rem;
+  }
+}
+
+.mapa__quadro {
+  position: relative;
+  /* A proporção vem do próprio viewBox gerado, por variável inline: é o que
+     garante que a posição percentual de cada pino caia no lugar certo. */
+  aspect-ratio: var(--mapa-proporcao, 1000 / 724);
+  background: var(--mapa-mar);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-grande);
+  overflow: hidden;
+}
+
+.mapa__base {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mapa__mar {
+  fill: var(--mapa-mar);
+}
+
+.mapa__terra {
+  fill: var(--mapa-terra);
+  stroke: var(--mapa-costa);
+  stroke-width: 1.1;
+  stroke-linejoin: round;
+}
+
+.mapa__verde {
+  fill: var(--mapa-verde);
+}
+
+.mapa__agua {
+  fill: var(--mapa-agua);
+}
+
+.mapa__fonte {
+  margin: 0.7rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--tinta-suave);
+}
+
+/* ── Pinos: botão de verdade por cima do desenho ── */
+
+.mapa__pino {
+  position: absolute;
+  /* O círculo fica centrado na coordenada; a área de toque é maior que ele. */
+  translate: calc(-50% + var(--pino-x, 0px)) calc(-50% + var(--pino-y, 0px));
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.mapa__pino-marca {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: var(--pino);
+  height: var(--pino);
+  border-radius: 50%;
+  background: var(--dourado);
+  color: var(--grafite);
+  border: 2px solid var(--superficie);
+  box-shadow: var(--sombra);
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Os dois pontos da Zona Norte ficam próximos nesta escala. As hastes
+   preservam a coordenada e separam os alvos de toque inclusive no celular. */
+.mapa__pino[data-unidade='nova-america'] {
+  --pino-x: 20px;
+  --pino-y: -20px;
+  --pino-angulo: -45deg;
+}
+
+.mapa__pino[data-unidade='norte-shopping'] {
+  --pino-x: -20px;
+  --pino-y: 20px;
+  --pino-angulo: 135deg;
+}
+
+.mapa__pino[data-unidade='nova-america']::before,
+.mapa__pino[data-unidade='norte-shopping']::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - var(--pino-x));
+  top: calc(50% - var(--pino-y));
+  width: 28.28px;
+  height: 1px;
+  background: var(--dourado-tinta);
+  transform: rotate(var(--pino-angulo));
+  transform-origin: 0 50%;
+}
+
+.mapa__pino[data-unidade='nova-america']::after,
+.mapa__pino[data-unidade='norte-shopping']::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - var(--pino-x));
+  top: calc(50% - var(--pino-y));
+  translate: -50% -50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--dourado-tinta);
+}
+
+/* Rótulo só para leitor de tela: o desenho é decorativo, o texto é que informa. */
+.mapa__pino-rotulo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.mapa__pino:hover .mapa__pino-marca {
+  transform: scale(1.12);
+}
+
+.mapa__pino:focus-visible {
+  outline: none;
+}
+
+.mapa__pino:focus-visible .mapa__pino-marca {
+  outline: 2px solid var(--dourado-tinta);
+  outline-offset: 3px;
+}
+
+.mapa__pino[aria-pressed='true'] {
+  z-index: 3;
+}
+
+.mapa__pino[aria-pressed='true'] .mapa__pino-marca {
+  transform: scale(1.24);
+  background: var(--grafite);
+  color: var(--tinta-sobre-escuro);
+  border-color: var(--dourado);
+}
+
+/* ── Cartões das unidades ── */
+
+.unidades__lista {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.unidade {
+  background: var(--fundo);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-grande);
+  padding: clamp(1.05rem, 2.2vw, 1.35rem);
+  transition: border-color 0.22s ease, background 0.22s ease;
+}
+
+.unidade:hover {
+  border-color: var(--linha-forte);
+}
+
+.unidade[data-selecionada='true'] {
+  border-color: var(--dourado);
+  background: var(--superficie-funda);
+}
+
+.unidade__cabeca {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+}
+
+.unidade__escolher {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* O atendimento domiciliar não tem ponto no mapa: o cabeçalho não é botão. */
+.unidade__escolher--fixo {
+  cursor: default;
+}
+
+.unidade__num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--dourado);
+  color: var(--grafite);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.unidade__num--casa {
+  background: none;
+  border: 1px solid var(--linha-dourada);
+  color: var(--dourado-tinta);
+}
+
+.unidade__num--casa svg {
+  width: 17px;
+  height: 17px;
+}
+
+.unidade__identidade {
+  display: grid;
+  gap: 0.12rem;
+}
+
+.unidade__nome {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.unidade__bairro {
+  font-size: 0.8125rem;
+  color: var(--tinta-suave);
+}
+
+.unidade__endereco {
+  margin: 0.85rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.unidade__nota {
+  margin: 0.35rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--tinta-suave);
+}
+
+.unidade__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.3rem;
+  margin-top: 0.5rem;
+}
+
+.unidade__acao {
+  display: inline-flex;
+  align-items: center;
+  /* 44 px de alvo de toque: estes são controles, não links em meio a frase. */
+  min-height: 44px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--dourado-tinta);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.unidade__acao::after {
+  content: ' ↗';
+  text-decoration: none;
+}
+
+.unidade__acao--rota::after {
+  content: ' →';
+}
+
+/* Aviso de seleção para leitor de tela; o destaque visual está no cartão. */
+.unidades__status {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--tinta-suave);
+  min-height: 1.5em;
+}
+
+/* ── Agenda desativada ── */
+
+/* Os campos existem, visíveis e bloqueados: a estrutura fica pronta para
+   quando houver agenda, e enquanto isso ninguém escolhe horário nenhum. */
+.agenda {
+  margin-top: clamp(2.2rem, 4vw, 3.2rem);
+  padding: clamp(1.3rem, 3vw, 2rem);
+  background: var(--superficie-funda);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-grande);
+}
+
+.agenda__titulo {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dourado-tinta);
+  margin-bottom: 0.8rem;
+}
+
+.agenda__texto {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 0.9375rem;
+}
+
+.agenda__campos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.4rem;
+  margin: 1.2rem 0 0;
+}
+
+.agenda__campo {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  min-width: 0;
+  flex: 1 1 180px;
+}
+
+.agenda__rotulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.agenda__controle {
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 0.6rem 0.75rem;
+  min-height: 44px;
+  background: var(--fundo);
+  border: 1px dashed var(--linha-forte);
+  border-radius: var(--raio);
+  /* Cor explícita: o cinza que o navegador aplica a campo desativado não
+     alcança o contraste mínimo exigido pelos testes. */
+  color: var(--tinta-suave);
+  -webkit-text-fill-color: var(--tinta-suave);
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.agenda__aviso {
+  margin: 1rem 0 0;
+  max-width: 62ch;
+  font-size: 0.8125rem;
+  color: var(--tinta-suave);
+}
+
+.unidades__aviso {
+  margin: clamp(1.6rem, 3vw, 2.2rem) 0 0;
+  max-width: 68ch;
+  font-size: 0.875rem;
+  color: var(--tinta-suave);
+}
+
+/* ───────────── 16. Movimento reduzido e impressão ─────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -84,6 +84,88 @@
   abrirPorHash();
   window.addEventListener('hashchange', abrirPorHash);
 
+  /* ────────── Unidades: escolher uma e vê-la no mapa ────────── */
+
+  // Sem este trecho a seção continua inteira: o mapa já está desenhado, os
+  // endereços estão em texto e os links de rota e de WhatsApp funcionam. O que
+  // se acrescenta aqui é só o destaque — nenhuma requisição, nenhum
+  // armazenamento, nenhum horário reservável.
+  var secaoUnidades = document.getElementById('unidades');
+
+  if (secaoUnidades) {
+    var pinos = secaoUnidades.querySelectorAll('.mapa__pino[data-unidade]');
+    var escolhas = secaoUnidades.querySelectorAll('.unidade__escolher[data-unidade]');
+    var cartoes = secaoUnidades.querySelectorAll('[data-unidade-cartao]');
+    var aviso = secaoUnidades.querySelector('.unidades__status');
+    var selecionada = null;
+
+    var cartaoDe = function (id) {
+      for (var i = 0; i < cartoes.length; i += 1) {
+        if (cartoes[i].getAttribute('data-unidade-cartao') === id) return cartoes[i];
+      }
+      return null;
+    };
+
+    var nomeDe = function (id) {
+      var cartao = cartaoDe(id);
+      var nome = cartao && cartao.querySelector('.unidade__nome');
+      return nome ? nome.textContent.trim() : '';
+    };
+
+    var marcar = function (lista) {
+      Array.prototype.forEach.call(lista, function (elemento) {
+        var alvo = elemento.getAttribute('data-unidade');
+        elemento.setAttribute('aria-pressed', String(alvo === selecionada));
+      });
+    };
+
+    var destacar = function (id, vindoDoMapa) {
+      // Escolher a unidade já destacada desfaz a seleção e volta à visão geral.
+      selecionada = selecionada === id ? null : id;
+
+      marcar(pinos);
+      marcar(escolhas);
+      Array.prototype.forEach.call(cartoes, function (cartao) {
+        var alvo = cartao.getAttribute('data-unidade-cartao');
+        if (alvo === selecionada) cartao.setAttribute('data-selecionada', 'true');
+        else cartao.removeAttribute('data-selecionada');
+      });
+
+      if (aviso) {
+        aviso.textContent = selecionada
+          ? nomeDe(selecionada) + ' em destaque no mapa.'
+          : '';
+      }
+
+      // Quem clicou no pino está olhando o mapa: leva o cartão até ele.
+      if (selecionada && vindoDoMapa) {
+        var cartao = cartaoDe(selecionada);
+        if (cartao && cartao.scrollIntoView) {
+          cartao.scrollIntoView({
+            block: 'nearest',
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+          });
+        }
+      }
+    };
+
+    Array.prototype.forEach.call(pinos, function (pino) {
+      pino.addEventListener('click', function () {
+        destacar(pino.getAttribute('data-unidade'), true);
+      });
+    });
+
+    Array.prototype.forEach.call(escolhas, function (botao) {
+      botao.addEventListener('click', function () {
+        destacar(botao.getAttribute('data-unidade'), false);
+      });
+    });
+
+    document.addEventListener('keydown', function (evento) {
+      if (evento.key === 'Escape' && selecionada) destacar(selecionada, false);
+    });
+  }
+
   /* ───────── Indica a seção atual na navegação ──────────── */
 
   // Na home, destaca o item do menu correspondente à seção visível. É um
